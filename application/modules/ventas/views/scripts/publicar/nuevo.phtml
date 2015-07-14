@@ -1,0 +1,171 @@
+<h3><span class="glyphicon glyphicon-inbox"></span> Publicar Producto / Servicio</h3>
+<br/>
+<form enctype='multipart/form-data' class="form-horizontal" role="form" method="post" action="">
+    <fieldset>
+        <div class="col-sm-3 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Categoría
+                </span>
+                <?php echo $this->form->getElement('categoria'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+        <div class="col-sm-3 col-sm-offset-1 hide">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Subcategoría
+                </span>
+                <select id="subcategoria" class="form-control" name="subcategoria" required="required">
+                </select>
+            </div>
+            <br/>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="col-sm-6 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Nombre del Producto / Servicio
+                </span>
+                <?php echo $this->form->getElement('nombre'); ?>
+            </div>
+        </div>
+       
+        <div class="clearfix"></div>
+        <br/>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Descripción
+                </span>
+                <?php echo $this->form->getElement('descripcion'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+        <div class="col-sm-2 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Precio
+                </span>
+                <?php echo $this->form->getElement('precio'); ?>
+            </div>
+        </div>
+        <div class="col-sm-2 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon" >
+                    Cantidad
+                </span>
+                <?php echo $this->form->getElement('cantidad'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        
+       
+        <div class="clearfix"></div>
+        <br/>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon" style="border-right: 1px solid #999999;">
+                    Publicar en
+                </span>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="chkPublicar" style="margin-left: 5px;"name="chkPublicar[]" id="chkPublicar1" value="1">Home
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="chkPublicar" name="chkPublicar[]" id="chkPublicar2" value="2">Directorio
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" class="chkPublicar" name="chkPublicar[]" id="chkPublicar3" value="3">Sistema
+                </label>
+            </div>
+        </div>
+         <div class="clearfix"></div>
+        <br/>
+        <div id="imgPosicion" class="col-sm-6 col-sm-offset-1 hide">
+            <div class="col-sm-5">
+            <img src="<?php echo STATIC_URL . '/img/posiciones.jpg'; ?>" alt="Selecciona la posición" title="Seleccione una posición">
+            </div>
+            <div class="col-sm-7">
+                <?php
+                $paquete1 = "";
+                $paquete2 = "";
+                $paquete3 = "";
+                $paquete4 = "";
+                $saldo = $this->saldo;
+                
+                if(empty($saldo[0])){
+                    $paquete1 = "disabled";
+                }
+                if(empty($saldo[1])){
+                    $paquete2 = "disabled";
+                }
+                if(empty($saldo[2])){
+                    $paquete3 = "disabled";
+                }
+                if(empty($saldo[3])){
+                    $paquete4 = "disabled";
+                }
+                ?>
+                <input type="hidden" id="saldo1" name="saldo1" value="<?php echo $saldo[0]['dias_saldo']; ?>" />
+                <input type="hidden" id="saldo1" name="saldo1" value="<?php echo $saldo[0]['dias_saldo']; ?>" />
+                <input type="hidden" id="saldo1" name="saldo1" value="<?php echo $saldo[0]['dias_saldo']; ?>" />
+                <input type="hidden" id="saldo1" name="saldo1" value="<?php echo $saldo[0]['dias_saldo']; ?>" />
+                <h5 style="font-weight: bold">Seleccione la posición en el HOME</h5>
+                <input paq="4" <?php echo $paquete4; ?> class="rdPosicion" type="radio" name="posicion" value="1" /> 1 
+                <input paq="3" <?php echo $paquete3; ?> class="rdPosicion" style="margin-left: 25px;" type="radio" name="posicion" value="2" /> 2 <br/>
+                <input paq="2" <?php echo $paquete2; ?> class="rdPosicion" type="radio" name="posicion" value="3" /> 3 
+                <input paq="1" <?php echo $paquete1; ?> class="rdPosicion" style="margin-left: 25px;" type="radio" name="posicion" value="4" /> 4 <br/>
+                <input paq="1" <?php echo $paquete1; ?> class="rdPosicion" type="radio" name="posicion" value="5" /> 5 
+                <input paq="1" <?php echo $paquete1; ?> class="rdPosicion" style="margin-left: 25px;" type="radio" name="posicion" value="6" /> 6 <br/>
+                <input paq="1" <?php echo $paquete1; ?> class="rdPosicion" type="radio" name="posicion" value="7" /> 7 
+                <input paq="1" <?php echo $paquete1; ?> class="rdPosicion" style="margin-left: 25px;" type="radio" name="posicion" value="8" /> 8 <br/>
+                <input paq="1" <?php echo $paquete1; ?> class="rdPosicion" type="radio" name="posicion" value="9" /> 9 
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+        <div class="col-sm-3 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Fecha Inicio
+                </span>
+                <?php echo $this->form->getElement('fechaInicio'); ?>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Fecha Fin
+                </span>
+                <?php echo $this->form->getElement('fechaFin'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon" style="border-right: 1px solid #999999">
+                    Imagen
+                </span>
+                <?php echo $this->form->getElement('file'); ?>
+            </div>
+        </div>
+         <div class="clearfix"></div>
+        <br/>
+        <div class="col-sm-3 col-sm-offset-1 hide">
+            <h4>Vista Previa</h4>
+                <img id="preview" src="#" alt="Vista Previa" />
+        </div>
+        <div class="clearfix"></div>
+        <br/><br/>
+        <div class="form-group">
+            <div class="col-sm-offset-8 col-sm-3">
+                <a class="btn btn-default" href="/ventas/publicar/">Cancelar</a>
+                <button class="btn btn-primary" type="submit">Publicar</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,154 @@
+<h4> <span class="glyphicon glyphicon-user"></span> Información de la Empresa</h4>
+<br/>
+
+<form enctype='multipart/form-data' class="form-horizontal" role="form" method="post" action="">
+    <?php echo $this->form->getElement('empresa'); ?>
+    <?php echo $this->form->getElement('ubicacion'); ?>
+        <?php echo $this->form->getElement('ubigeo'); ?>
+    <div class="col-md-4">
+    <div class="col-md-6 margin-bottom-10">     
+        <div class="input-group">
+            <span class="input-group-addon">
+                RUC
+            </span>
+            <?php echo $this->form->getElement('numeroRuc'); ?>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-md-12 margin-bottom-10">     
+        <div class="input-group">
+            <span class="input-group-addon">
+                Nombre Comercial
+            </span>    
+            <?php echo $this->form->getElement('nombreComercial'); ?>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-md-12 margin-bottom-10">     
+        <div class="input-group">
+            <span class="input-group-addon">
+                Razón Social
+            </span>
+            <?php echo $this->form->getElement('razonSocial'); ?>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-md-10 margin-bottom-10">     
+        <div class="input-group">
+            <span class="input-group-addon">
+                Categoría
+            </span>
+            <?php echo $this->form->getElement('categoria'); ?>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-md-10 margin-bottom-10">     
+        <div class="input-group">
+            <span class="input-group-addon">
+                SubCategoría
+            </span>
+            <?php echo $this->form->getElement('subcategoria'); ?>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-md-10 margin-bottom-20">     
+        <div class="input-group">
+            <span class="input-group-addon">
+                Página Web
+            </span>
+            <?php echo $this->form->getElement('website'); ?>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-md-6 margin-bottom-10">     
+        <div class="input-group">
+            <span class="input-group-addon">
+                País
+            </span>
+            <?php echo $this->form->getElement('pais'); ?>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-md-8 margin-bottom-10">     
+        <div class="input-group">
+            <span class="input-group-addon">
+               Departamento
+            </span>
+            <?php echo $this->form->getElement('departamento'); ?>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-md-8 margin-bottom-10">     
+        <div class="input-group">
+            <span class="input-group-addon">
+                Provincia
+            </span>
+            <?php echo $this->form->getElement('provincia'); ?>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-md-8 margin-bottom-10">     
+        <div class="input-group">
+            <span class="input-group-addon">
+                Distrito
+            </span>
+            <?php echo $this->form->getElement('distrito'); ?>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-md-12 margin-bottom-20">     
+        <div class="input-group">
+            <span class="input-group-addon">
+                Dirección
+            </span>
+            <?php echo $this->form->getElement('direccion'); ?>
+        </div>
+    </div>  
+    <div class="clearfix"></div>
+    <div class="col-md-6 margin-bottom-10">     
+        <div class="input-group">
+            <span class="input-group-addon">
+                Imagen Referencial
+            </span>
+            
+            <?php echo $this->form->getElement('imagen'); ?>
+        </div>
+    </div>  
+    <div class="clearfix"></div>
+    <div class="col-md-6 margin-bottom-10">     
+        <div id="fileLogo"  class="input-group">
+            <span class="input-group-addon">
+                Logo
+            </span>
+            <?php //echo $this->form->getElement('logo'); ?>
+        </div>
+    </div> 
+    <div class="clearfix"></div>
+    <div class="col-md-5 margin-bottom-10">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+</div>
+    <div class="col-md-4 margin-bottom-20">
+        <h4 style="margin-top:0"><strong>Imagen Referencial</strong></h4>
+        <div style="border:1px solid #ddd" class="col-md-12 margin-bottom-20">
+            <?php if($this->empresa['empresa_imagen'] != ""){
+                $fileImage = $this->empresa['empresa_imagen'];
+            }else{
+                $fileImage = "sin_imagen.jpg";
+            }
+?>
+            <img id="preImagen" src="<?php echo DINAMIC_URL.'/empresa/imagen/'.$fileImage; ?>" />
+        </div>
+        <h4 style="margin-top:0"><strong>Logo Empresarial</strong></h4>
+        <div style="border:1px solid #ddd" class="col-md-7">
+            <?php if($this->empresa['empresa_logo'] != ""){
+                $fileLogo = $this->empresa['empresa_logo'];
+            }else{
+                $fileLogo = "sin_logo.jpg";
+            }
+?>
+            <img id="preLogo" src="<?php echo DINAMIC_URL.'/empresa/logo/'.$fileLogo; ?>" />
+        </div>
+    </div>
+</form>
+

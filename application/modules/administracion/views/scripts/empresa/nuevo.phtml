@@ -1,0 +1,111 @@
+<h4> <span class="glyphicon glyphicon-user"></span> Nueva Empresa</h4>
+<div class="col-md-8">
+<br/>
+
+    <form class="form-horizontal" role="form" method="post" action="">
+        <input type="hidden" name="idUbigeo" id="idUbigeo">
+        <div class="col-md-4 margin-bottom-10">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    RUC
+                </span>
+                    <?php echo $this->form->getElement('numeroRuc'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+         <div class="col-md-6 margin-bottom-10">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Nombre Comercial
+                </span>    
+                    <?php echo $this->form->getElement('nombreComercial'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-6 margin-bottom-10">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Razón Social
+                </span>
+                    <?php echo $this->form->getElement('razonSocial'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-5 margin-bottom-10">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Categoría
+                </span>
+                    <?php echo $this->form->getElement('categoria'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-5 margin-bottom-10 hide">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    SubCategoría
+                </span>
+                    <select id="subcategoria" name="subcategoria" class="form-control">
+                    </select>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-4 margin-bottom-10">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    País
+                </span>
+                    <?php echo $this->form->getElement('pais'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-4 margin-bottom-10 hide">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Departamento
+                </span>
+                    <select id="departamento" name="departamento" class="form-control">
+                        <option value>--Seleccionar--</option>
+                        <?php foreach ($this->departamentos as $departamento) { ?>
+                            <option value="<?php echo utf8_encode($departamento['departamento']) ?>"><?php echo utf8_encode($departamento['departamento']) ?></option>
+                        <?php } ?>
+                    </select>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-4 margin-bottom-10 hide">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Provincia
+                </span>
+                    <select id="provincia" name="provincia" class="form-control">
+                    </select>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-4 margin-bottom-10 hide">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Distrito
+                </span>
+                    <select id="distrito" name="distrito" class="form-control">
+                    </select>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-6 margin-bottom-20">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Dirección
+                </span>
+                    <?php echo $this->form->getElement('direccion'); ?>
+            </div>
+        </div>         
+<div class="clearfix"></div>
+        <div class="col-md-5 margin-bottom-10">
+        <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+
+    </form>
+
+</div>

@@ -1,0 +1,67 @@
+<div style="font-size: 13px">
+    <div class="bgInfoEmpresa">
+        <div  class="container">
+            <div class="col-md-12">
+                <div class="col-md-8">
+                    <div class="tarjetaEmpresa">
+                        <div class="tarjetaContent">
+                            <div class="colEmpresal col-md-7">
+                                <?php $data = $this->empresa; ?>
+                                <h3><?php echo $data['empresa_nombre_comercial'] ?></h3>
+                                <p><?php echo $data['ubicacion_direccion'] ?><br/>
+                                    <?php echo $data['distrito'] . ' - ' . $data['provincia']; ?> <br/>
+                                    <?php echo $data['departamento'] . ' - ' . $data['pais_nombre']; ?></p>
+                                <p style="font-size:1.4em;color:#46b8da; font-weight: bold;"><a href="<?php echo 'http://'.$data['empresa_website'] ?>" target="_blank"><span class="glyphicon glyphicon-share"></span> <?php echo $data['empresa_website'] ?></a></p>
+                            </div>
+                            <div class="colEmpresar col-md-5 ">
+                                <div class="thumbnail imgEmpresa">
+                                    <?php
+                                    $imagen = ($data['empresa_imagen'] == '') ? 'sin_imagen.jpg' : $imagen = $data['empresa_imagen'];
+                                    ?>
+                                    <img src="<?php echo DINAMIC_URL . '/empresa/imagen/' . $imagen; ?>" />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="iconMap">
+                        <span style="font-size: 12em;" class="glyphicon glyphicon-map-marker"></span>   
+                        <div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div  class="container">
+        <div class="col-md-12 contInfoEmpresa">
+            <div class="col-md-8 infoEmpresa">
+                <h3>Información General</h3>
+                <p>RUC: <?php echo $data['empresa_ruc']; ?></p>
+                <p>Nombre Comercial: <?php echo $data['empresa_nombre_comercial']; ?></p>
+                <p>Razón Social: <?php echo $data['empresa_razon_social']; ?></p>
+                <p>Categoría: <?php echo $data['categoria_nombre']; ?></p>
+                <p>Subcategoría: <?php echo $data['subcategoria_nombre']; ?></p>
+                <hr>
+                <h3>Direcciones</h3>
+                <p><?php echo $data['ubicacion_direccion'] ?><br/>
+                    <?php echo $data['distrito'] . ' - ' . $data['provincia']; ?> <br/>
+                    <?php echo $data['departamento'] . ' - ' . $data['pais_nombre']; ?></p>
+            </div>
+            <div class="col-md-4">
+                <div class="infoLogoEmpresa">
+                    <?php
+                    $logo = ($data['empresa_logo'] == '') ? 'sin_logo.jpg' : $imagen = $data['empresa_logo'];
+                    ?>
+                    <img src="<?php echo DINAMIC_URL . '/empresa/logo/' . $logo; ?>" />
+                    <p><?php echo $data['subcategoria_nombre']; ?></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<h4> <span class="glyphicon glyphicon-user"></span> Nuevo Boletín</h4>
+<br/>
+
+<form id="frmTrainer" enctype='multipart/form-data' class="form-horizontal" role="form" method="post" action="">
+    <div class="col-md-5">
+        <div class="col-md-7 margin-bottom-10">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Fecha
+                </span>
+                <?php echo $this->form->getElement('fecha'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-7 margin-bottom-10">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Portada
+                </span>    
+                <?php echo $this->form->getElement('portada'); ?>
+            </div>
+        </div>
+        <div class="col-md-7 margin-bottom-10">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Archivo
+                </span>    
+                <?php echo $this->form->getElement('file'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-5 margin-bottom-10">
+            <button id="btnGuardar" type="submit" class="btn btn-primary btnGuardar">Registrar</button>
+        </div>
+    </div>
+
+</form>
+

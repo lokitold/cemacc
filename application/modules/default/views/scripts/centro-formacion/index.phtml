@@ -1,0 +1,62 @@
+<div style="margin-top: 20px;font-size: 13px" class="container">
+    <div class="col-md-8">
+        <p>El Centro de Formación Empresarial es el área de CEMACC responsable de la elaboración, 
+            promoción y difusión del programa de formación empresarial, permite preparar, capacitar y 
+            calificar a los profesionales en su formación integral, en el desarrollo de sus capacidades y habilidades, 
+            logrando agentes de cambio y potenciando sus competencias de gestión.</p>
+        <h4><strong>Nuestros Servicios</strong></h4>
+        <p><span style="font-size: 14px; font-weight: 800">Programa de Formación Empresarial:</span> Nuestros programas son elaborados a la medida de las necesidades de las 
+            empresas, con fuerte orientación a la práctica.</p>
+
+        <p>Asumimos un rol importante dentro del Directorio empresarial, por ser parte de la generación de valor en el apoyo de la 
+            ejecución de los planes y programas de capacitación con los que cuenta las empresas inscritas al Directorio, 
+            asegurando el éxito de los procesos de transformación y mejoramiento continuo.</p>
+
+        <p><span style="font-size: 14px; font-weight: 800">Cursos In House: </span>En CEMACC contamos con diferentes cursos que responden a las necesidades de su empresa, permitiéndole a 
+            usted y a su personal incrementar sus conocimientos en temas relacionados a la Gestión Financiera, Contable, Talento 
+            Humano y Producción.</p> 
+
+        <p>Contamos con una plana de expositores nacionales e internacionales de primer nivel constituido por destacados 
+            profesionales de las diversas actividades empresariales.</p>
+
+        <p><h4><strong>¿Por qué hacer Capacitación in house?</strong></h4>
+        Permite incrementa las capacidades de tu personal, desarrollando habilidades para manejar actividades y responsabilidades 
+        más eficiente y efectivamente, acelera el proceso de cambio en la organización logrando un intercambio de experiencias del 
+        grupo, y se sentirá inmediatamente el impacto.</p>
+
+        <p><h4><strong>Trabajas mientras te capacitas</strong></h4>
+        Permite utilizar la información de la empresa para los ejercicios, casos y discusiones en el curso, por lo que el 
+        desarrollo es aplicativo y se logran mayores beneficios.</p> 
+
+        <p><h4><strong>Ahorro en el costo por Capacitación</strong></h4>
+        Este servicio tiene un costo menor por persona que los cursos abiertos, es por eso que tu empresa obtiene un importante 
+        ahorro por persona.</p>
+
+    </div>
+
+    <div style="padding: 0; margin-left: 40px;" class="col-md-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Eventos</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="media-list">
+                    <?php
+                    foreach ($this->evento as $evento) {
+                        $fecha = new Zend_Date($evento['capacitacion_fecha'], 'YYYY-MM-dd');
+                        ?>
+                        <li class="media" style="margin-top: 3px">
+                            <div class="pull-left" style="background-color: #00569e; color: #fff; padding: 25px 8px 25px 8px;">
+                                <?php echo $fecha->get('dd-MM-YYYY') ?>
+                            </div>
+                            <div class="media-body" style="padding-top: 15px">
+                                <a style="color:#00569e; text-decoration: none" href="<?php echo BASE_URL . '/centro-formacion/capacitacion/taller/' . $evento['capacitacion_id']; ?>"><?php echo $evento['capacitacion_titulo'] ?></a>
+                            </div>
+                        </li>
+                    <?php } ?>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>    

@@ -1,0 +1,40 @@
+.padding-clear{
+    padding: 0px;
+}
+
+.margin-clear{
+    margin: 0px;
+}
+
+.padding-top-5{
+    padding-top: 5px;
+}
+.padding-top-10{
+    padding-top: 10px;
+}
+.padding-top-20{
+    padding-top: 20px;
+}
+.padding-top-30{
+    padding-top: 30px;
+}
+
+.margin-top-5{
+    padding-top: 5px;
+}
+
+.margin-top-10{
+    margin-top: 10px;
+}
+
+.margin-top-20{
+    margin-top: 20px;
+}
+
+.margin-bottom-10{
+    margin-bottom: 10px;
+}
+
+.margin-bottom-20{
+    margin-bottom: 20px;
+}

@@ -1,0 +1,118 @@
+body {
+    min-height: 1000px;
+    padding-top: 86px;
+}
+
+.navbar-default {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: linear-gradient(rgb(78, 82, 93) 0%, rgb(54, 56, 64) 100%);
+}
+
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand{
+    color: #999999;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus, 
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus
+{
+    color: #fff;
+}
+
+.container-breadcrumb {
+    background: url(../img/furley_bg.png) repeat;
+    border-bottom: 1px solid #c9c9c9;
+}
+
+#first-nav .dropdown-toggle{
+    color: white;
+}
+
+#first-nav .dropdown:hover{
+    background-color: #e7e7e7;
+}
+#first-nav .dropdown:hover a{
+    color: black;
+}
+
+
+
+
+#first-nav .navbar-nav>.open>a, #first-nav .navbar-nav>.open>a:hover,#first-nav .navbar-nav>.open>a:focus {
+    color: black;
+}
+
+#first-nav .dropdown-menu{
+    padding: 5px;
+    margin-top: 8px;
+    border-radius: 0;
+    top: 85%;
+    border-top: none;
+    right: 0;
+    background: #3a3f4b;
+}
+
+#first-nav .dropdown-menu li{
+    background: #f2f2f0;
+    border-bottom: 1px dotted #c9c9c9;
+    margin-bottom: 0;
+}
+
+#first-nav .dropdown-menu li a{
+    padding: 8px 10px;
+    font-size: 13px;
+}
+
+#first-nav .dropdown-menu li:hover{
+    background-color: white;
+}
+
+#first-nav .dropdown-menu li:hover a span{
+    color: #2d6ca2;
+}
+
+#second-nav .navbar-header{
+    width: 185px;
+    border-right: 1px solid #c9c9c9;
+}
+
+#second-nav .navbar-header a, #second-nav .navbar-header i{
+    height: 36px;
+    line-height: 36px;
+    width: 100%;
+    text-align: center;
+}
+
+#second-nav .breadcrumb{
+    display: inline-block;
+    background-color: transparent;
+    margin-bottom: 0px;
+}
+
+#second-nav .navbar-header{
+    display: none;
+}
+
+.container {
+    width: 100%;
+}
+
+#btnMenuToggle{
+    float: left;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {  
+    #second-nav .navbar-header{
+        display: block;
+    }
+
+    #btnMenuToggle{
+        display: none;
+    }
+}
+
+
+
+

@@ -1,0 +1,90 @@
+<div style="margin-top: 20px;font-size: 13px" class="container">
+    <div class="col-md-8 directorio">
+        <div class="panel panel-primary">
+
+            <div class="panel-body">
+                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+                    <table id="tableEmpresaCategoria" class="table table-bordered bootstrap-datatable datatable " aria-describedby="DataTables_Table_0_info">
+                        <thead>
+                                <th>Directorio Empresarial</th>
+                        </thead>
+                        <tbody>
+                            <?php
+                            foreach ($this->empresa as $data) {
+                                ?>
+                                <tr>
+                                    <td>
+                                        <div class="col-md-9">
+                                        <?php echo $data['empresa_razon_social']; ?><br/>
+                                        <?php echo $data['subcategoria_nombre']; ?><br/>
+                                        Dirección: <?php echo $data['ubicacion_direccion']; ?><br/> 
+                                        Departamento: <?php echo $data['departamento']; ?> 
+                                        - Provincia: <?php echo $data['provincia']; ?> 
+                                        - Distrito: <?php echo $data['distrito']; ?><br/>
+                                        <?php if($data['empresa_website'] != ''){?>
+                                            
+                                        Página Web: <a href='<?php echo 'http://'.$data['empresa_website']; ?>' target="_blank">Visitar Web</a><br/>
+                                        
+                                        <?php } ?>
+                                        <br/><a style="color: #fff" href="<?php echo BASE_URL .'/directorio/empresa/id/' . $data['empresa_id']; ?>" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-plus"></span> Ver más</a>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?php if($data['empresa_logo'] != ''){ ?>
+                                            <a href="<?php echo BASE_URL .'/directorio/empresa/id/' . $data['empresa_id']; ?>" ><img width="150" height="150" src="<?php echo DINAMIC_URL.'/empresa/logo/'.$data['empresa_logo']; ?>" /></a>
+                                            <?php } ?>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div style="padding: 0"class="col-md-4">
+        <div>
+            <img src="<?php echo STATIC_URL . '/img/registre-ya.png'; ?>" alt="...">    
+        </div>
+        <br/>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Últimas Empresas Registradas</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="media-list">
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="<?php echo DINAMIC_URL . '/empresa/mini-adra.jpg'; ?>" alt="...">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">WONG & CIA LOGISTICA S.A.C.</h4>
+                            Av. El Derby 055 Torre 1 piso 7 - Santiago de Surco
+                        </div>
+                    </li>
+                    <hr/>
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="<?php echo DINAMIC_URL . '/empresa/mini-bimbo.jpg'; ?>" alt="...">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">RICAVA SAC</h4>
+                            Av. Petit Thouars # 5390 Miraflores
+                        </div>
+                    </li>
+                    <hr/>
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="<?php echo DINAMIC_URL . '/empresa/mini-casa.jpg'; ?>" alt="...">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">Servicios Logísticos Diésel S.A.C.</h4>
+                            Calle 32 Nº 332 Urb. Corpac - San Isidro
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>    

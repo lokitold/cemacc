@@ -1,0 +1,48 @@
+<h3>Editar Juzgado</h3>
+<div class="box-content" style="display: block;">
+    <hr>
+    <div class="col-lg-6">
+        <form action="" method="POST">
+            <?php echo $this->form->getElement('juzgado_id'); ?>
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">Nombre:</span>
+                    <?php echo $this->form->getElement('nombre'); ?>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">Distrito Judicial:</span>
+                    <?php echo $this->form->getElement('distrito'); ?>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">Órgano Jurisdiccional:</span>
+                    <?php echo $this->form->getElement('organo'); ?>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">Especialidad:</span>
+                    <?php echo $this->form->getElement('especialidad'); ?>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">Sede:</span>
+                    <?php echo $this->form->getElement('sede'); ?>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <button type="submit" id="btnJuzgado" class="btn btn-primary">Actualizar</button>
+                <a class="btn btn-default" href="/administracion/juzgado" >Cancelar</a>
+            </div>    
+        </form>
+    </div>
+</div>

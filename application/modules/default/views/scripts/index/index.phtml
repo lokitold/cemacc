@@ -1,0 +1,343 @@
+<!-- Carousel
+    ================================================== -->
+<!--<div id="myCarousel" class="carousel slide" data-ride="carousel">
+     Indicators 
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img data-src="holder.js/900x300/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Example headline.</h1>
+                    <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img data-src="holder.js/900x300/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Another example headline.</h1>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img data-src="holder.js/900x300/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>One more for good measure.</h1>
+                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div> /.carousel -->
+<div id="slidePrincipal" class="flexslider">
+    <ul class="slides">
+        <li>
+            <img src="<?php echo DINAMIC_URL . '/empresa/slide1.jpg' ?>" />
+        </li>
+        <li>
+            <img src="<?php echo DINAMIC_URL . '/empresa/slide2.jpg' ?>" />
+        </li>
+        <li>
+            <img src="<?php echo DINAMIC_URL . '/empresa/slide3.jpg' ?>" />
+        </li>
+    </ul>
+</div>
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="col-sm-6 col-md-8 publicidadMain">
+        <div class="thumbnail thumbMain">
+            <?php if (count($this->publicacion1) == 0) { ?>
+                <img src="<?php echo STATIC_URL . '/img/disponible760x410.jpg'; ?>" alt="...">
+            <?php } else {
+                ?>
+                <div class="flexslider slidePublicidad" style="margin-bottom:0; border:0">
+                    <ul class="slides">
+                        <?php foreach ($this->publicacion1 as $data) {
+                            ?>
+                            <li>
+                                <img src="<?php echo DINAMIC_URL . '/ventas/' . $data['publicacion_imagen']; ?>" alt="...">
+                            </li>
+                        <?php }
+                        ?>
+                    </ul></div>
+            <?php }
+            ?>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 publicidadMain">
+        <div class="thumbnail thumbMain">
+            <?php if (count($this->publicacion2) == 0) { ?>
+                <img src="<?php echo STATIC_URL . '/img/disponible370x410.jpg'; ?>" alt="...">
+            <?php } else {
+                ?>
+                <div class="flexslider slidePublicidad" style="margin-bottom:0; border:0">
+                    <ul class="slides">
+                        <?php foreach ($this->publicacion2 as $data) {
+                            ?>
+                            <li>
+                                <img src="<?php echo DINAMIC_URL . '/ventas/' . $data['publicacion_imagen']; ?>" alt="...">
+                            </li>
+                        <?php }
+                        ?>
+                    </ul></div>
+            <?php }
+            ?>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div style="margin-top: 5px;" class="col-sm-6 col-md-12 publicidadMain">
+        <div class="thumbnail thumbMain">
+            <?php if (count($this->publicacion3) == 0) { ?>
+                <img src="<?php echo STATIC_URL . '/img/disponible1150x250.jpg'; ?>" alt="...">
+            <?php } else {
+                ?>
+                <div class="flexslider slidePublicidad" style="margin-bottom:0; border:0">
+                    <ul class="slides">
+                        <?php foreach ($this->publicacion3 as $data) {
+                            ?>
+                            <li>
+                                <img src="<?php echo DINAMIC_URL . '/ventas/' . $data['publicacion_imagen']; ?>" alt="...">
+                            </li>
+                        <?php }
+                        ?>
+                    </ul></div>
+            <?php }
+            ?>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <br/>
+    <div class="col-sm-6 col-md-4 publicidadMain">
+        <div class="thumbnail thumbMain">
+            <?php if (count($this->publicacion4) == 0) { ?>
+                <img src="<?php echo STATIC_URL . '/img/disponible370x250.jpg'; ?>" alt="...">
+            <?php } else {
+                ?>
+                <div class="flexslider slidePublicidad" style="margin-bottom:0; border:0">
+                    <ul class="slides">
+                        <?php foreach ($this->publicacion4 as $data) {
+                            ?>
+                            <li>
+                                <img src="<?php echo DINAMIC_URL . '/ventas/' . $data['publicacion_imagen']; ?>" alt="...">
+                            </li>
+                        <?php }
+                        ?>
+                    </ul></div>
+            <?php }
+            ?>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 publicidadMain">
+        <div class="thumbnail thumbMain">
+            <?php if (count($this->publicacion5) == 0) { ?>
+
+                <img src="<?php echo STATIC_URL . '/img/disponible370x250.jpg'; ?>" alt="...">
+
+            <?php } else {
+                ?>
+                <div class="flexslider slidePublicidad" style="margin-bottom:0; border:0">
+                    <ul class="slides">
+                        <?php foreach ($this->publicacion5 as $data) {
+                            ?><li>
+                                <img src="<?php echo DINAMIC_URL . '/ventas/' . $data['publicacion_imagen']; ?>" alt="...">
+                            </li>
+                        <?php }
+                        ?>
+                    </ul></div>
+            <?php }
+            ?>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 publicidadMain">
+        <div class="thumbnail thumbMain">
+            <?php if (count($this->publicacion6) == 0) { ?>
+                <img src="<?php echo STATIC_URL . '/img/disponible370x250.jpg'; ?>" alt="...">
+            <?php } else {
+                ?>
+                <div class="flexslider slidePublicidad" style="margin-bottom:0; border:0">
+                    <ul class="slides">
+                        <?php foreach ($this->publicacion6 as $data) {
+                            ?>
+                            <li>
+                                <img src="<?php echo DINAMIC_URL . '/ventas/' . $data['publicacion_imagen']; ?>" alt="...">
+                            </li>
+                        <?php }
+                        ?>
+                    </ul></div>
+            <?php }
+            ?>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 publicidadMain">
+        <div class="thumbnail thumbMain">
+            <?php if (count($this->publicacion7) == 0) { ?>
+                <img src="<?php echo STATIC_URL . '/img/disponible370x250.jpg'; ?>" alt="...">
+            <?php } else {
+                ?>
+                <div class="flexslider slidePublicidad" style="margin-bottom:0; border:0">
+                    <ul class="slides">
+                        <?php foreach ($this->publicacion7 as $data) {
+                            ?>
+                            <li>
+                                <img src="<?php echo DINAMIC_URL . '/ventas/' . $data['publicacion_imagen']; ?>" alt="...">
+                            </li>
+                        <?php }
+                        ?>
+                    </ul></div>
+            <?php }
+            ?>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 publicidadMain">
+        <div class="thumbnail thumbMain">
+            <?php if (count($this->publicacion8) == 0) { ?>
+                <img src="<?php echo STATIC_URL . '/img/disponible370x250.jpg'; ?>" alt="...">
+            <?php } else {
+                ?>
+                <div class="flexslider slidePublicidad" style="margin-bottom:0; border:0">
+                    <ul class="slides">
+                        <?php foreach ($this->publicacion8 as $data) {
+                            ?>
+                            <li>
+                                <img src="<?php echo DINAMIC_URL . '/ventas/' . $data['publicacion_imagen']; ?>" alt="...">
+                            </li>
+                        <?php }
+                        ?>
+                    </ul></div>
+            <?php }
+            ?>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-4 publicidadMain">
+        <div class="thumbnail thumbMain">
+            <?php if (count($this->publicacion9) == 0) { ?>
+                <img src="<?php echo STATIC_URL . '/img/disponible370x250.jpg'; ?>" alt="...">
+            <?php } else {
+                ?>
+                <div class="flexslider slidePublicidad" style="margin-bottom:0; border:0">
+                    <ul class="slides">
+                        <?php foreach ($this->publicacion9 as $data) {
+                            ?>
+                            <li>
+                                <img src="<?php echo DINAMIC_URL . '/ventas/' . $data['publicacion_imagen']; ?>" alt="...">
+                            </li>
+                        <?php }
+                        ?>
+                    </ul></div>
+            <?php }
+            ?>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <br/>
+    <div class="col-sm-6 col-md-12 publicidadMain">
+        <!--        <div class="thumbnail thumbMain">
+                    <img src="<?php //echo STATIC_URL . '/img/carrousel.jpg';            ?>" alt="...">
+                </div>-->
+        <div id="slideEmpresa" class="flexslider">
+            <ul class="slides">
+                <?php foreach ($this->logos as $logo) { ?>
+                    <li>
+                        <img src="<?php echo DINAMIC_URL . '/empresa/logo/' . $logo['empresa_logo']; ?>" />
+                    </li>
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <br/>
+    <div class="col-sm-6 col-md-3 publicidadMain">
+        <div class="thumbnail">
+            <img src="<?php echo STATIC_URL . '/img/centro-empresarial.jpg' ?>" alt="...">
+            <div class="caption">
+                <h3>Centro Empresarial</h3>
+                <p>El Centro Empresarial CEMACC de Consultores ACC es la más completa plataforma de servicios empresariales del Perú, creada para favorecer a la competitividad de las empresas.</p>
+                <p><a href="<?php echo BASE_URL . '/centro-empresarial' ?>" class="btn btn-primary" role="button">Ver más</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3 publicidadMain">
+        <div class="thumbnail">
+            <img src="<?php echo STATIC_URL . '/img/directorio-empresarial.jpg' ?>" alt="...">
+            <div class="caption">
+                <h3>Directorio Empresarial</h3>
+                <p>El Centro de Formación Empresarial es el área responsable de la elaboración, promoción y difusión del programa, permite preparar, capacitar y calificar a los profesionales.</p>
+                <p><a href="<?php echo BASE_URL . '/directorio' ?>" class="btn btn-primary" role="button">Ver más</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3 publicidadMain">
+        <div class="thumbnail">
+            <img src="<?php echo STATIC_URL . '/img/unete.jpg' ?>" alt="...">
+            <div class="caption">
+                <h3>!Unete a nuestra red!</h3>
+                <p>Este es CEMACC, el centro de empresarial que te permitirá acceder a diversos beneficios. Forma parte de la gran red de empresas y gestión de negocios.</p>
+                <p><a href="<?php echo BASE_URL . '/registro' ?>" class="btn btn-primary" role="button">Ver más</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-3 publicidadMain">
+        <div class="thumbnail">
+            <img src="<?php echo STATIC_URL . '/img/contactanos.jpg' ?>" alt="...">
+            <div class="caption">
+                <h3>Contáctanos</h3>
+                <p>Si necesitas información o tienes alguna duda con gusto te atenderemos. A continuación te brindamos la información necesaria para contactárnos.</p>
+                <p><a href="<?php echo BASE_URL . '/contacto' ?>" class="btn btn-primary" role="button">Ver más</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-7 publicidadMain">
+        <h3 class="title-separator">Centro de Capacitación y Entrenamiento
+        </h3>
+        <div class="col-md-12 thumbnail thumbMain">
+            <div id="slider" class="nivoSlider">
+                <?php foreach ($this->capacitacion as $capacitacion) { ?>
+                    <a href="<?php echo BASE_URL . '/centro-formacion/capacitacion/taller/' . $capacitacion['capacitacion_id']; ?>" target="_blank"><img src="<?php echo DINAMIC_URL . '/capacitacion/' . $capacitacion['capacitacion_imagen']; ?>" alt="" /></a>
+                <?php } ?>
+            </div>
+        </div>
+
+
+    </div> 
+    <div class="col-sm-6 col-md-5 publicidadMain">
+        <h3 class="title-separator">Consultoría / Asesoría
+        </h3>
+        <div id="contAsesoria" class="thumbnail thumbMain">
+            <div id="asesoria">
+                <?php
+                foreach ($this->asesoria as $asesoria) {
+                    $s = substr($asesoria['asesoria_descripcion'], 0, 115);
+                    $des = substr($s, 0, strrpos($s, ' '));
+                    ?>
+                    <div>
+                        <h3><?php echo $asesoria['asesoria_titulo']; ?></h3>
+                        <p><?php echo $des; ?> Leer más...</p>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div> 
+
+</div>  

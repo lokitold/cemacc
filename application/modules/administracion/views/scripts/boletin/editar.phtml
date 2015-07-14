@@ -1,0 +1,67 @@
+<h4> <span class="glyphicon glyphicon-user"></span> Editar Trainer</h4>
+<br/>
+
+<form id="frmTrainer" enctype='multipart/form-data' class="form-horizontal" role="form" method="post" action="">
+    <?php echo $this->form->getElement('trainer'); ?>
+    <div class="col-md-5">
+        <div class="col-md-7 margin-bottom-10">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Nombre
+                </span>
+                <?php echo $this->form->getElement('nombres'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-7 margin-bottom-10">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Apellidos
+                </span>    
+                <?php echo $this->form->getElement('apellidos'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-6 margin-bottom-10">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Foto
+                </span>
+
+                <?php echo $this->form->getElement('file'); ?>
+            </div>
+        </div>  
+        <div class="clearfix"></div>
+        <div class="col-md-6 margin-bottom-10">     
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Descripción
+                </span>
+            </div>
+            <input type="hidden" id="txtDescripcion" name="txtDescripcion" />   
+        </div>  
+        <div class="clearfix"></div>
+        <div class="col-md-12 margin-bottom-10">     
+            <div class="summernote" id="descripcion"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-5 margin-bottom-10">
+            <button id="btnGuardar" type="submit" class="btn btn-primary btnGuardar">Actualizar</button>
+        </div>
+    </div>
+    <?php if ($this->trainer['trainer_foto'] != "") { ?>
+        <div class="col-md-3 margin-bottom-20">
+            <h4 style="margin-top:0"><strong>Foto</strong></h4>
+            <img id="preview" src="<?php echo DINAMIC_URL . '/trainer/' . $this->trainer['trainer_foto']; ?>" alt="Foto" />
+        </div>
+    <?php } else { ?>
+        <div class="col-md-3 margin-bottom-20 hide">
+            <h4 style="margin-top:0"><strong>Foto</strong></h4>
+            <img id="preview" src="#" alt="Foto" />
+        </div>
+    <?php } ?>
+    <div id="dataDescripcion" class="hidden">
+        <?php echo $this->trainer['trainer_descripcion']; ?>
+    </div>
+</form>
+

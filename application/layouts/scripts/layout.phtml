@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <?php echo $this->render('render/head.phtml') ?>  
+    <body>
+<!--        <div class="col-md-12 container">
+            <div style="margin-bottom:  0px; " class="page-header">
+                <div class="col-md-8">
+                    <h1 style="color: #0066B1">CEMACC</h1>
+                </div>
+
+            </div>
+        </div>    -->
+        <div class="clearfix"></div>
+        <div style="margin-bottom: 0px;" class="navbar">
+            <div class="container">
+
+                <div style="margin-bottom: 0px; margin-top: 0px;" class="navbar navbar-inverse navbar-wrapper "  role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <a class="navbar-brand" href="<?php echo BASE_URL; ?>"> <img src="<?php echo STATIC_URL . '/img/logo_cemacc_mini.png'; ?>" alt="CEMACC" title="CEMACC"/></a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav" style="margin-right: 53px;">
+                                <li class="<?php echo $this->classMenu1 ?>"><a href="<?php echo BASE_URL; ?>">Home</a></li>
+                                <li class="<?php echo $this->classMenu2 ?>"><a href="<?php echo BASE_URL . '/centro-empresarial'; ?>">Centro Empresarial</a></li>
+                                <li class="<?php echo $this->classMenu3 ?>"><a href="<?php echo BASE_URL . '/centro-formacion'; ?>">Centro de Formación</a></li>
+                                <li class="<?php echo $this->classMenu4 ?>"><a href="<?php echo BASE_URL . '/directorio'; ?>">Directorio Empresarial</a></li>
+                                <li class="<?php echo $this->classMenu5 ?>"><a href="<?php echo BASE_URL . '/boletin'; ?>">Boletín Mensual</a></li>
+                                <li class="<?php echo $this->classMenu6 ?>"><a href="<?php echo BASE_URL . '/contacto'; ?>">Contacto</a></li>
+                            </ul>
+                            <div style="color:#ffffff;background-color: #004064;padding:15px 5px 10px 0px;text-align: center;" class="col-md-2">
+                                <span class="glyphicon glyphicon-user"></span> <a style="color:#ffffff;text-decoration: none" href="<?php echo BASE_URL; ?>/login">Ingresa</a> o <a style="text-decoration: none;color:#ffffff;" href="<?php echo BASE_URL; ?>/registro">Regístrate</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div id="page-content-wrapper">
+            <!-- Keep all page content within the page-content inset div! -->
+            <div class="page-content inset">
+                <div class="container">
+                    <?php echo $this->getMesseger(); ?>
+                </div>
+                <?php echo $this->layout()->content; ?>
+                
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <!-- FOOTER -->
+        <div style="margin-bottom:  0px; padding-left: 60px; padding-right: 60px;" class="col-md-offset-1 page-header col-md-10">
+            <footer>
+                <p class="pull-right"><a href="#">Arriba</a></p>
+                <p>&copy; 2013 CEMACC,  &middot; <a data-toggle="modal" data-target=".modalPoliticaPrivacidad" href="#">Política de Privacidad</a></p>
+            </footer>
+        </div>    
+    </div><!-- /.container -->
+    <!-- Modal -->
+    <div class="modal fade modalPoliticaPrivacidad" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myLargeModalLabel">Política de Privacidad</h4>
+                </div>
+                <div class="modal-body">
+                    <p><strong>De la Introducción</strong><br/>
+                        El Centro Empresarial CEMACC se compromete a resguardar la privacidad de los datos personales del USUARIO, los que están debidamente protegidos.
+                        La ley impone una serie de obligaciones y establece asimismo, los derechos de las personas en materia de protección de datos de carácter privado. Para el correcto conocimiento y, en su caso, ejercicio de los derechos que pudieran corresponderle, es necesario que el USUARIO lea detenidamente este aviso.</p>
+
+                    <p><strong>De la Política de Protección de Datos</strong><br/>
+                        Los únicos datos a los que CEMACC tendrá acceso serán aquellos que el USUARIO facilite voluntariamente a través de los formularios de la web www.cem-acc.com (en adelante la WEB). En ese sentido, es preciso que el USUARIO conozca que para el alta y registro en la WEB se le solicitarán datos de carácter personal. Entre ellos, datos mínimos para acceder a la WEB y disfrutar de determinados servicios y contenidos. En caso contrario, el USUARIO no podrá acceder ni utilizar determinados servicios y contenidos. Respecto de los datos personales facilitados por el USUARIO, éstos sólo podrán ser cedidos de manera automatizada, para los fines expresamente autorizados por el USUARIO. A tales efectos, los mencionados datos serán incorporados en un fichero cuya titularidad y responsabilidad corresponde al Centro Empresaria CEMACC.</p>
+
+                    <p><strong>De la seguridad de los datos</strong><br/>
+                        Se ha puesto en marcha mecanismos técnicos apropiados para proteger los datos personales de los USUARIOS frente a posibles accesos no autorizados. No obstante, el USUARIO debe quedar informado y advertido a través de este aviso de que tales medios no son infalibles e inexpugnables y por tanto CEMACC no puede hacerse responsable de tales prácticas, quedando liberado de cualquier responsabilidad en caso se produjera.</p>
+
+                    <p><strong>De los cambios en nuestra política de privacidad</strong><br/>
+                        La presente Política de Privacidad, podrá ser modificada en cualquier momento por CEMACC. Las modificaciones serán notificadas a todos los USUARIOS, vía correo electrónico.</p>
+
+                    <p><strong>Del contacto</strong><br/>
+                        La WEB es propiedad de Consultores ACC a través de CEMACC, con domicilio en Av. Dos de Mayo 516 of 201 - Miraflores - Edificio Empresarial Icono torre b. Para cualquier pregunta sobre nuestra política de privacidad, o cualquier otro tema referente a esta web, deberán contactarse con nosotros mediante carta dirigida a CEMACC o mail a la siguiente dirección: cem@cemacc.com. Agradecemos cualquier comentario referente a nuestra política de privacidad. Si usted piensa que no estamos cumpliendo dicha política, por favor háganoslo saber y haremos lo posible para solucionar el problema.
+
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <?php echo $this->render('render/script-footer.phtml'); ?>
+    <?php echo $this->headScript() ?>
+</body>
+</html>
+
+

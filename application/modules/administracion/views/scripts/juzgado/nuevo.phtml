@@ -1,0 +1,50 @@
+    <h3>Agregar Juzgado</h3>
+<div class="box-content" style="display: block;">
+    <hr>
+    <div class="col-lg-6">
+        <form action="" method="POST">
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">Nombre:</span>
+                    <?php echo $this->form->getElement('nombre'); ?>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">Distrito Judicial:</span>
+                    <?php echo $this->form->getElement('distrito'); ?>
+                </div>
+            </div>
+            <br>
+            <div class="row hide">
+                <div class="input-group">
+                    <span class="input-group-addon">Órgano Jurisdiccional:</span>
+                    <select id="organo" class="form-control" name="organo">
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row hide">
+                <div class="input-group">
+                    <span class="input-group-addon">Especialidad:</span>
+                    <select id="especialidad" class="form-control" name="especialidad">
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row hide">
+                <div class="input-group">
+                    <span class="input-group-addon">Sede:</span>
+                    <select id="sede" class="form-control" name="sede">
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <button type="submit" id="btnJuzgado" class="btn btn-primary">Registrar</button>
+                <a class="btn btn-default" href="/administracion/juzgado" >Cancelar</a>
+            </div>    
+        </form>
+    </div>
+</div>

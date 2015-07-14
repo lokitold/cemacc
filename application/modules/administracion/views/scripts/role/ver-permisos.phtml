@@ -1,0 +1,42 @@
+<?php
+$modules = array();
+foreach ($this->tree as $key => $index) {
+    switch ($index['module']) {
+        case 'administracion':
+            $modules['Administrador'][] = $this->tree[$key];
+            break;
+        case 'concesionario':
+            $modules['Dealer'][] = $this->tree[$key];
+            break;
+        case 'proveedor':
+            $modules['Proveedor'][] = $this->tree[$key];
+            break;
+    }
+}
+?>
+<ul id="treeView" >
+    
+    <?php
+    foreach ($modules as $index0 => $key) { ?>
+        <li>
+            <span class="icon icon-darkgray icon-triangle-e"></span>
+            <a><?php echo $index0; ?></a>
+            <ul>
+                <?php foreach ($key as $index) { ?>
+                    <li>
+                        <span class="icon icon-darkgray icon-triangle-e"></span>
+                        <a><?php echo $index['label']; ?></a>
+                        <ul>
+                            <?php foreach ($index['pages'] as $index2) { ?>
+                            <?php if(isset($index2['id']) && in_array($index2['id'], $this->resourceSelected)){ ?>
+                                <li>  <?php echo $index2['label']; ?>  </li>
+                            <?php }?>
+                            <?php } ?>
+                        </ul>
+                    </li>
+                <?php } ?>
+            </ul>
+        </li>
+
+    <?php } ?>
+</ul>

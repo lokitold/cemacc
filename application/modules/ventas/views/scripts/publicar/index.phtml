@@ -1,0 +1,42 @@
+<h3>Mis Publicaciones</h3>
+<div class="col-sm-9">
+    <div>
+            <a class="btn btn-sm btn-primary" href="<?php echo BASE_URL?>/ventas/publicar/nuevo"><span class="glyphicon glyphicon-plus-sign"></span> Nueva Publicación
+            </a>
+    </div>
+    <br/>
+    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+        <table id="tablePublicacion" class="table table-striped table-bordered bootstrap-datatable datatable dataTable" aria-describedby="DataTables_Table_0_info">
+            <thead>
+            <th>Nombre</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Fin</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($this->publicacion as $publicacion) {
+                    $fechaInicio = new Zend_Date($publicacion['publicacion_fecha_inicio']);
+                    $fechaFin = new Zend_Date($publicacion['publicacion_fecha_fin']);
+                    ?>
+                    <tr>
+                        <td><?php echo $publicacion['publicacion_nombre']; ?></td>
+                        <td><?php echo $fechaInicio->get('dd-MM-YYYY'); ?></td>
+                        <td><?php echo $fechaFin->get('dd-MM-YYYY'); ?></td>
+                        <td><?php
+                            if ($publicacion['swt_activo'])
+                                echo '<span class="label label-success">Activo</span>';
+                            else
+                                echo '<span class="label label-warning">Finalizado</span>';
+                            ?>
+                        </td>
+                        <td>
+                                <a class="btn btn-info btn-sm" href="<?php echo BASE_URL?>/ventas/publicar/detalle/id/<?php echo $publicacion['publicacion_id']; ?>"><span class="glyphicon glyphicon-pencil"></span> Detalle</a>
+                        </td>
+                    </tr>
+                <?php }?>
+            </tbody>
+        </table>
+    </div>
+</div>

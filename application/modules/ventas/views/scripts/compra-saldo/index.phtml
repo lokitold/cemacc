@@ -1,0 +1,56 @@
+<h3>Comprar Saldo</h3>
+<div class="col-md-10">
+    <br/>
+    <?php foreach($this->paquete as $paquete){?>
+    <div class="col-md-2 dvPaquete">
+                <span style="font-size:22px;font-weight:bold;"><?php echo $paquete['paquete_dias']; ?> Días</span>
+                <br/>
+                <span style="font-size:18px;font-weight:bold;line-height:30px;color:#888;"><?php echo $paquete['paquete_nombre']; ?></span>
+                <br/>
+                <span style="font-size:18px;font-weight:bold;line-height:30px;"><?php echo $paquete['paquete_dimension']; ?></span>
+                <br/>
+                <br/>
+                <span style="font-size:28px;font-weight:bold;color:#B40404;">S/. <?php echo $paquete['paquete_precio']; ?></span>
+                <br/>
+                <br/>
+                <p><a href="#" class="btn btn-primary btnConfirmar" nombre="<?php echo $paquete['paquete_nombre']; ?>" 
+                      paquete="<?php echo $paquete['paquete_id']; ?>" dimension="<?php echo $paquete['paquete_dimension']; ?>" 
+                      precio="<?php echo $paquete['paquete_precio']; ?>" dias="<?php echo $paquete['paquete_dias']; ?>" role="button">Comprar Ahora</a></p>
+    </div>
+    <?php }?>
+    <div class='clearfix'></div>
+    <h3>Posiciones de la Publicidad</h3>
+    <div>
+        <img src="<?php echo STATIC_URL.'/img/posiciones_compra.jpg'?>" />
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalConfirmarCompra" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <form class="form-horizontal" id="frmConfirmarCompra" role="form" method="post" action="">
+            <input type="hidden" id="idPaquete" name="idPaquete" />
+            <input type="hidden" id="cantidad" name="cantidad" />
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Confimar Compra</h4>
+      </div>
+      <div class="modal-body">
+        Para activar la compra que está a punto de realizar deberá depositar el monto correspondiente al
+        numero de cuenta XXXXXXXXXXXXXX en el banco XXXXXXXXXX. 
+        <br/><br/>
+        Para verificar el pago realizdo deberá enviar un correo con el voucher scaneado a xxxxx.
+        
+        <div id="detalleCompra">
+            
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Confirmar</button>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>

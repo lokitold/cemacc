@@ -1,0 +1,263 @@
+<div style="margin-top: 20px;font-size: 13px" class="container">
+
+    <div class="col-md-12">
+        <div class="panel panel-primary ">
+
+            <div class="panel-heading "><h4> <span class="glyphicon glyphicon-user"></span> Nueva Empresa</h4></div>
+            <div class="panel-body ">
+                <form id="frmRegistro" class="form-horizontal" role="form" method="post" action="">
+                    <input type="hidden" name="idUbigeo" id="idUbigeo">
+                    <input type="hidden" name="activoV" id="activoV" value="1">
+                    <input type="hidden" name="activoL" id="activoL" value="0">
+                    <input type="hidden" name="activoR" id="activoR" value="0">
+                    <input type="hidden" name="admin" id="admin">
+                    <input type="hidden" name="pre" id="pre" value="0">
+                    <input type="hidden" name="idEmpresa" id="idEmpresa">
+                    <input type="hidden" name="idUbicacion" id="idUbicacion">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h6 class="panel-title"><strong>Datos de la Empresa</strong></h6>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-12">       
+                                    <div class="form-group">
+                                        <label for="razonSocial" class="col-md-4 control-label">Razón Social</label>
+                                        <div class="col-md-8">
+                                            <?php echo $this->form->getElement('razonSocial'); ?>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <div class="col-md-12">    
+                                    <div class="form-group">
+                                        <label for="nombreComercial" class="col-md-4 control-label">Nombre Comercial</label>
+                                        <div class="col-md-8">
+                                            <?php echo $this->form->getElement('nombreComercial'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">     
+                                    <div class="form-group">
+                                        <label for="numeroRuc" class="col-md-4 control-label">RUC</label>
+                                        <div class="col-md-4">
+                                            <?php echo $this->form->getElement('numeroRuc'); ?>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <div class="col-md-12">       
+                                    <div class="form-group">
+                                        <label for="rubro" class="col-md-4 control-label">Categoría</label>
+                                        <div class="col-md-5">
+                                            <?php echo $this->form->getElement('categoria'); ?>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <div class="col-md-12">    
+                                    <div class="form-group hide">
+                                        <label for="subcategoria" class="col-md-4 control-label">SubCategoría</label>
+                                        <div class="col-md-5">
+                                            <select id="subcategoria" name="subcategoria" class="form-control">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default ">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><strong>Ubicación</strong></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-12">    
+                                    <div class="form-group">
+                                        <label for="pais" class="col-md-4 control-label">País</label>
+                                        <div class="col-md-5">
+                                            <?php echo $this->form->getElement('pais'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-12">    
+                                    <div class="form-group  hide">
+                                        <label for="departamento" class="col-md-4 control-label">Departamento</label>
+                                        <div class="col-md-5">
+                                            <select id="departamento" name="departamento" class="form-control">
+                                                <option value>--Seleccionar--</option>
+                                                <?php foreach ($this->departamentos as $departamento) { ?>
+                                                    <option value="<?php echo utf8_encode($departamento['departamento']) ?>"><?php echo utf8_encode($departamento['departamento']) ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-12">    
+                                    <div class="form-group hide">
+                                        <label for="distrito" class="col-md-4 control-label">Provincia</label>
+                                        <div class="col-md-5">
+                                            <select id="provincia" name="provincia" class="form-control">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-12">    
+                                    <div class="form-group hide">
+                                        <label for="distrito" class="col-md-4 control-label">Distrito</label>
+                                        <div class="col-md-5">
+                                            <select id="distrito" name="distrito" class="form-control">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-md-12">    
+                                    <div class="form-group">
+                                        <label for="direccion" class="col-md-4 control-label">Dirección</label>
+                                        <div class="col-md-8">
+                                            <?php echo $this->form->getElement('direccion'); ?>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>        
+                    </div>
+                    <!--- dddd --->
+                    <div class="col-md-6">    
+                        <div class="panel panel-default ">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><strong>Administradores</strong></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-md-12">
+                                    <span class="glyphicon glyphicon-chevron-down"></span> <em><strong>Responsable de Ventas</strong></em>   
+                                </div>
+                                <div style="margin-top: 15px;" class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="nombre1" class="col-md-4 control-label">Nombres</label>
+                                        <div class="col-md-8">
+                                            <?php echo $this->form->getElement('nombreVentas'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>    
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="correo1" class="col-md-4 control-label">Apellidos</label>
+                                        <div class="col-md-8">
+                                            <?php echo $this->form->getElement('apellidoVentas'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>      
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="pass1" class="col-md-4 control-label">Correo Electrónico</label>
+                                        <div class="col-md-8">
+                                            <?php echo $this->form->getElement('correoVentas'); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div><br/> 
+                                <div id="arrCompras" class="col-md-6" style="cursor: pointer">
+                                    <span class="glyphicon glyphicon-chevron-right"></span> <em><strong>Responsable de Compras</strong></em>   
+                                </div>
+                                <div class="clearfix"></div>
+                                <div style="margin-top: 15px;" id="resCompras" class="hide">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="nombre1" class="col-md-4 control-label">Nombres</label>
+                                            <div class="col-md-8">
+                                                <?php echo $this->form->getElement('nombreLogistica'); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>    
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="correo1" class="col-md-4 control-label">Apellidos</label>
+                                            <div class="col-md-8">
+                                                <?php echo $this->form->getElement('apellidoLogistica'); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>      
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="pass1" class="col-md-4 control-label">Correo Electrónico</label>
+                                            <div class="col-md-8">
+                                                <?php echo $this->form->getElement('correoLogistica'); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div><br/>
+                                <div id="arrRecursos" class="col-md-5" style="cursor: pointer">
+                                    <span class="glyphicon glyphicon-chevron-right"></span> <em><strong>Responsable de RRHH</strong></em>   
+                                </div>
+                                <div class="clearfix"></div>
+                                <div style="margin-top: 15px;" id="resRecursos" class="hide">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="nombre1" class="col-md-4 control-label">Nombres</label>
+                                            <div class="col-md-8">
+                                                <?php echo $this->form->getElement('nombreRecursosHumanos'); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>    
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="correo1" class="col-md-4 control-label">Apellidos</label>
+                                            <div class="col-md-8">
+                                                <?php echo $this->form->getElement('apellidoRecursosHumanos'); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>      
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="pass1" class="col-md-4 control-label">Correo Electrónico</label>
+                                            <div class="col-md-8">
+                                                <?php echo $this->form->getElement('correoRecursosHumanos'); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--- dddd -->
+                    <div class="clearfix"></div>
+                    <div style="margin-right: 10px;" class="form-group text-right">
+                        <button id="btnRegistrar" type="submit" class="btn btn-primary">Registrar</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>    
+<!-- Small modal -->
+
+<div class="modal fade bs-example-modal-sm" id="modalAdmin" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="mySmallModalLabel">Administrador</h4>
+            </div>
+            <div class="modal-body">
+                Seleccione el administrador de la empresa
+                <div id="optionAdmin">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnAceptar" type="button" class="btn btn-primary">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>

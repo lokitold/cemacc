@@ -1,0 +1,122 @@
+<h3><span class="glyphicon glyphicon-user"></span> Nuevo Usuario</h3>
+<br/>
+<form class="form-horizontal" role="form" method="post" action="/administracion/usuario/nuevo">
+    <fieldset>
+        <div class="col-sm-5 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Tipo Documento
+                </span>
+                <?php echo $this->form->getElement('tipoDocumento'); ?>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Número Documento
+                </span>
+                <?php echo $this->form->getElement('nroDocumento'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+        <div class="col-sm-7 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Nombres
+                </span>
+                <?php echo $this->form->getElement('nombres'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+        <div class="col-sm-5 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Apellido Paterno
+                </span>
+                <?php echo $this->form->getElement('apellidoPaterno'); ?>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Apellido Materno
+                </span>
+                <?php echo $this->form->getElement('apellidoMaterno'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+        <div class="col-sm-5 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Teléfono
+                </span>
+                <?php echo $this->form->getElement('telefono'); ?>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Celular
+                </span>
+                <?php echo $this->form->getElement('celular'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+        <div class="col-sm-8 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Dirección
+                </span>
+                <?php echo $this->form->getElement('direccion'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+        <div class="col-sm-5 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Correo Electrónico
+                </span>
+                <?php echo $this->form->getElement('email'); ?>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Número Colegiatura
+                </span>
+                <?php echo $this->form->getElement('nroColegiatura'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br/>
+        <div class="col-sm-5 col-sm-offset-1">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Usuario
+                </span>
+                <?php echo $this->form->getElement('usuario'); ?>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    Rol
+                </span>
+                <?php echo $this->form->getElement('rol'); ?>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br/><br/>
+        <div class="form-group">
+            <div class="col-sm-offset-8 col-sm-3">
+                <a class="btn btn-default" href="/administracion/usuario">Cancelar</a>
+                <button class="btn btn-primary" type="submit">Registrar Usuario</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,48 @@
+<h3>Listado de Sedes</h3>
+<div class="box-content" style="display: block;">
+    <div>
+        <?php if ($this->acl->isAllowed($this->identity->role_nombre, 'administracion-sede-nuevo')) { ?>
+        <a class="btn btn-sm btn-primary" href="/administracion/sede/nuevo"><span class="glyphicon glyphicon-plus-sign"></span>  Agregar Nueva Sede</a>
+        <?php } ?>
+    </div>
+    <br/>
+    
+    <div>
+        <table id="table" class="table table-striped  table-hover dataTable">
+            <thead>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+            </thead>
+            <tbody>
+                <?php foreach ($this->sedes as $sede): ?>
+                    <tr>
+                        <td><?php echo $sede['sede_nombre']; ?></td>
+                        <td><?php echo $sede['sede_direccion']; ?></td>
+                        <td><?php
+                            if ($sede['sede_flag_activo'])
+                                echo '<span class="label label-success">Activo</span>';
+                            else
+                                echo '<span class="label label-warning">Inactivo</span>';
+                            ?>
+                        </td>
+                        <td>
+                            <?php if ($this->acl->isAllowed($this->identity->role_nombre, 'administracion-sede-editar')) { ?>
+                            <a class="btn btn-info btn-sm" href="/administracion/sede/editar/id/<?php echo $sede['sede_id']; ?>"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
+                            <?php } ?>
+                            <?php if ($this->acl->isAllowed($this->identity->role_nombre, 'administracion-sede-activar')) { ?>
+                                <?php if ($sede['sede_flag_activo']) { ?>
+                                    <a class="btn btn-danger btn-sm" href="/administracion/sede/activar/id/<?php echo $sede['sede_id']; ?>/flag/0"><span class="glyphicon glyphicon-ban-circle"></span> Desactivar</a>
+                                <?php } else { ?>
+                                    <a class="btn btn-warning btn-sm" href="/administracion/sede/activar/id/<?php echo $sede['sede_id']; ?>/flag/1"><span class="glyphicon glyphicon-ok"></span> Activar</a>
+                                <?php } ?>
+                            <?php } ?>
+                        </td>
+                    </tr>
+
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>

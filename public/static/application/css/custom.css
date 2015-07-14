@@ -1,0 +1,177 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16/01/2014, 02:11:33 AM
+    Author     : USUARIO
+*/
+@media (min-width:992px){.modal-lg{width:900px}}
+.publicidadMain {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+body{
+    text-align: justify;
+}
+
+.thumbMain{
+    margin-bottom: 2px;
+}
+.directorio a {
+    color: #0067b2; 
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-inverse {
+    background: #0073c0; /* Old browsers */
+    background: -moz-linear-gradient(top,  #0073c0 0%, #0067b2 50%, #00569e 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0073c0), color-stop(50%,#0067b2), color-stop(100%,#00569e)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #0073c0 0%,#0067b2 50%,#00569e 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #0073c0 0%,#0067b2 50%,#00569e 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #0073c0 0%,#0067b2 50%,#00569e 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #0073c0 0%,#0067b2 50%,#00569e 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0073c0', endColorstr='#00569e',GradientType=0 ); /* IE6-9 */
+
+}
+
+#slideEmpresa {
+    margin: 0;
+}
+#slidePrincipal{
+    border: 0;
+}
+
+#slideEmpresa ul li{
+    margin: 0 14px 0 14px;
+    display: inline-block; vertical-align: middle; 
+}
+
+/* Direction Nav SlidePrincipal*/
+#slidePrincipal.flex-direction-nav {*height: 0;}
+#slidePrincipal.flex-direction-nav a  { text-decoration:none; display: block; width: 40px; height: 40px; margin: -20px 0 0; position: absolute; top: 50%; z-index: 10; overflow: hidden; opacity: 1 ;cursor: pointer; color: rgba(0,0,0,0.8) !important; text-shadow: 1px 1px 0 rgba(255,255,255,0.3); -webkit-transition: all .3s ease; -moz-transition: all .3s ease; transition: all .3s ease; }
+/*.flex-direction-nav .flex-prev { left: -50px; }
+.flex-direction-nav .flex-next { right: -50px; text-align: right; }*/
+#slidePrincipal.flexslider .flex-prev { opacity: 0.7; left: 10px; }
+#slidePrincipal.flexslider .flex-next { opacity: 0.7; right: 10px; }
+#slidePrincipal.flexslider .flex-next:hover, .flexslider:hover .flex-prev:hover { opacity: 1; }
+#slidePrincipal.flex-direction-nav .flex-disabled { opacity: 0!important; filter:alpha(opacity=0); cursor: default; }
+#slidePrincipal.flex-direction-nav a:before  { font-family: "flexslider-icon"; font-size: 40px; display: inline-block; content: '\f001'; }
+#slidePrincipal.flex-direction-nav a.flex-next:before  { content: '\f002'; }
+#slidePrincipal a.flex-next, a.flex-prev{height: 50px;}
+/**/
+
+
+#contAsesoria{
+    height: 299px;
+}
+
+.tarjetaEmpresa{
+    //position: absolute;
+    top: 20px;
+    background: rgba(0, 0, 0, 0.80);
+    color: #fff;
+    padding-bottom: 25px;
+}
+
+.tarjetaContent{
+    margin: 16px;
+    //position: relative;
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.iconMap{
+    margin: 16px;
+    margin-top: 20px;
+    padding: 15px;
+    text-align: center;
+    color: #3278b3;
+}
+
+.imgEmpresa{
+    margin-top: 20px;
+}
+
+.infoEmpresa{
+    border-right: 1px solid #eee;
+}
+
+.contInfoEmpresa{
+    margin-top: 20px;
+}
+
+.infoLogoEmpresa{
+    text-align: center;
+}
+
+.bgInfoEmpresa{
+    padding-bottom: 35px;
+    padding-top: 20px;
+    background-color: #e9f1fa;
+}
+
+.imgCapacitacion{
+    margin-top: 20px;
+}
+
+.tarjetaCapacitacion{
+    //position: absolute;
+    top: 20px;
+    background: #00569e;
+    color: #fff;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.infoCapacitacion{
+    border-right: 1px solid #eee;
+}
+
+.contInfoCapacitacion{
+    margin-top: 20px;
+}
+
+.infoLogoCapacitacion{
+    text-align: center;
+}
+
+.bgInfoCapacitacion{
+    padding-bottom: 35px;
+    padding-top: 20px;
+    //background-color: #e9f1fa;
+}
+
+body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom {
+    margin-right: 15px;
+}
+
+.modal {
+    overflow-y: auto;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
+    color: #00569e;
+    font-weight: bold;
+    background-color: #f8f8f8;
+}
+
+.tab-content{
+    padding: 25px;
+    background-color: #f8f8f8;
+}
+
+.capacitacionAsistir{
+    //position: absolute;
+    background: #f8f8f8;
+    padding: 25px;
+}
+
+.asistirContent{
+    padding: 20px;
+    background-color: #fdba31;
+}
+

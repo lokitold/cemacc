@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <?php echo $this->render('render/head_intranet.phtml') ?>
+    <body>
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div id="first-nav" class="container">
+                <div class="navbar-header">
+                    <button id="btnMenuToggle" type="button" class="btn btn-default btn-sm" style="float: left; margin-right: 2px">
+                        <span class="glyphicon glyphicon-align-justify"></span>
+                    </button>
+                    <a class="navbar-brand" href="<?php echo BASE_URL; ?>" target="blank">CEMACC</a>
+                </div>
+                <div class="navbar-right navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span><?php echo $this->layoutUsuario->usuario_nombre.' '.$this->layoutUsuario->usuario_apellido; ?></span>
+                                <span class="menuExpand glyphicon glyphicon-chevron-down" style="font-size: 80%"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li role="presentation"><a href="<?php echo BASE_URL ?>/perfil" class=""><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
+                                <li role="presentation"><a href="<?php echo BASE_URL ?>/perfil/password" class=""><span class="glyphicon glyphicon-lock"></span> Contraseña</a></li>
+                                <li role="presentation"><a href="<?php echo BASE_URL ?>/logout" class=""><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+            <div id="second-nav" class="container container-breadcrumb">
+                <div class="navbar-header">
+                    <a href="#"><i class="fa fa-toggle-left fa-lg" id="menu-toggle"></i></a>
+                </div>
+<!--                <div class="navbar-breadcrumb">
+                    <ol class="breadcrumb">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li class="active">Data</li>
+                    </ol>
+                </div>-->
+            </div>
+        </div>
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li><a href="<?php echo BASE_URL.'/'.$this->layoutUsuario->role_module;?>"><i class="fa  fa-dashboard fa-lg"></i>Home</a></li>
+                    <?php 
+                    $dataRoles = explode('|',$this->layoutUsuario->roles);
+        foreach ($dataRoles as $roles){
+            $datos = explode(',',$roles);
+            $data[] = $datos[1];
+        }
+                    
+                    foreach ($data as $index=>$rol){
+                    if($rol == 'Administrador'){?>
+                    <li class="hasSub">
+                        <a href="#">
+                            <i class="fa  fa-suitcase fa-lg" ></i>
+                            Empresa
+                            <span class="menuExpand glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="<?php echo BASE_URL.'/administracion/empresa/nuevo'?>"><i class="fa fa-dashboard fa-lg"></i>Pre-Inscripción</a></li>
+                            <li><a href="<?php echo BASE_URL.'/administracion/empresa/'?>"><i class="fa fa-android fa-lg"></i>Empresas</a></li>
+                            <li><a href="<?php echo BASE_URL.'/administracion/pagos/'?>"><i class="fa fa-search fa-lg"></i>Pagos</a></li>
+                        </ul>
+                    </li>
+                    <li class="hasSub">
+                        <a href="#">
+                            <i class="fa  fa-calendar fa-lg" ></i>
+                            Paquete
+                            <span class="menuExpand glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="<?php echo BASE_URL.'/administracion/paquete/nuevo'?>"><i class="fa fa-dashboard fa-lg"></i>Nuevo Paquete</a></li>
+                            <li><a href="<?php echo BASE_URL.'/administracion/paquete/'?>"><i class="fa fa-android fa-lg"></i>Paquetes</a></li>
+                        </ul>
+                    </li>
+                    <li class="hasSub">
+                        <a href="#">
+                            <i class="fa  fa-calendar fa-lg" ></i>
+                            Capacitación
+                            <span class="menuExpand glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="<?php echo BASE_URL.'/administracion/capacitacion/nuevo'?>"><i class="fa fa-dashboard fa-lg"></i>Nueva Capacitación</a></li>
+                            <li><a href="<?php echo BASE_URL.'/administracion/capacitacion/'?>"><i class="fa fa-android fa-lg"></i>Capacitaciones</a></li>
+                            <li><a href="<?php echo BASE_URL.'/administracion/trainer/'?>"><i class="fa fa-android fa-lg"></i>Trainer</a></li>
+                        </ul>
+                    </li>
+                    <li class="hasSub">
+                        <a href="#">
+                            <i class="fa  fa-calendar fa-lg" ></i>
+                            Asesorías
+                            <span class="menuExpand glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="<?php echo BASE_URL.'/administracion/asesoria/nuevo'?>"><i class="fa fa-dashboard fa-lg"></i>Nueva Asesoría</a></li>
+                            <li><a href="<?php echo BASE_URL.'/administracion/asesoria/'?>"><i class="fa fa-android fa-lg"></i>Asesorías</a></li>
+                        </ul>
+                    </li>
+                    <li class="hasSub">
+                        <a href="#">
+                            <i class="fa  fa-calendar fa-lg" ></i>
+                            Boletín
+                            <span class="menuExpand glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="<?php echo BASE_URL.'/administracion/boletin/nuevo'?>"><i class="fa fa-dashboard fa-lg"></i>Nueva Boletín</a></li>
+                            <li><a href="<?php echo BASE_URL.'/administracion/boletin/'?>"><i class="fa fa-android fa-lg"></i>Boletines</a></li>
+                        </ul>
+                    </li>
+                    <?php break;}}?>
+                    <?php 
+                    foreach ($data as $index=>$rol){
+                    if($rol == 'AdmEmpresa'){?>
+                    <li class="hasSub">
+                        <a href="#">
+                            <i class="fa  fa-calendar fa-lg" ></i>
+                            Empresa
+                            <span class="menuExpand glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="<?php echo BASE_URL.'/empresa/informacion/'?>"><i class="fa fa-dashboard fa-lg"></i>Información Empresa</a></li>
+                        </ul>
+                    </li>
+                    <?php break;}}?>
+                    <?php 
+                    foreach ($data as $index=>$rol){
+                    if($rol == 'Ventas'){?>
+                    <li class="hasSub">
+                        <a href="#">
+                            <i class="fa  fa-calendar fa-lg" ></i>
+                            Ventas
+                            <span class="menuExpand glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="<?php echo BASE_URL.'/ventas/publicar/'?>"><i class="fa fa-dashboard fa-lg"></i>Mis Publicaciones</a></li>
+                            <li><a href="<?php echo BASE_URL.'/ventas/publicar/nuevo'?>"><i class="fa fa-android fa-lg"></i>Publicar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="<?php echo BASE_URL.'/ventas/compra-saldo/'?>"><i class="fa fa-search fa-lg"></i>Comprar Saldo</a></li>
+                    <?php break;}}?>
+                    <?php 
+                    foreach ($data as $index=>$rol){
+                    if($rol == 'Logistica'){?>
+                    <li class="hasSub">
+                        <a href="#">
+                            <i class="fa  fa-calendar fa-lg" ></i>
+                            Logística
+                            <span class="menuExpand glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="<?php echo BASE_URL.'/logistica/adquisicion/'?>"><i class="fa fa-dashboard fa-lg"></i>Mis Adquisiciones</a></li>
+                            <li><a href="<?php echo BASE_URL.'/logistica/adquisicion-producto/nuevo'?>"><i class="fa fa-android fa-lg"></i>Adquirir Producto</a></li>
+                            <li><a href="<?php echo BASE_URL.'/logistica/adquisicion-servicio/nuevo'?>"><i class="fa fa-android fa-lg"></i>Adquirir Servicio</a></li>
+                        </ul>
+                    </li>
+                    <?php break;}}?>
+                    <?php 
+                    foreach ($data as $index=>$rol){
+                    if($rol == 'RecursosHumanos'){?>
+                    <li class="hasSub">
+                        <a href="#">
+                            <i class="fa  fa-calendar fa-lg" ></i>
+                            RR.HH
+                            <span class="menuExpand glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a href="<?php echo BASE_URL.'/recursos-humanos/requerimiento'?>"><i class="fa fa-dashboard fa-lg"></i>Mis Requerimientos</a></li>
+                            <li><a href="<?php echo BASE_URL.'/recursos-humanos/requerimiento/nuevo'?>"><i class="fa fa-android fa-lg"></i>Requerir Personal</a></li>
+                        </ul>
+                    </li>
+                     <?php break;}}?>
+                    <?php 
+                    foreach ($data as $index=>$rol){
+                    if($rol == 'Ventas'){
+                        if(!empty($this->saldo)){?>
+                    <li style="height:41px;"></li>
+                   
+                    <li style="font-size:12px;">
+                        <h4><strong>Saldo</strong></h4>
+                    <?php foreach($this->saldo as $saldo){
+                    echo '<p>Paquete '.$saldo['paquete_nombre'].': '.$saldo['dias_saldo'].' días</p>';
+                    }?>
+                </li>
+                 <?php }else{
+                     echo "<li style='font-size:12px;'><h4><strong>Saldo</strong></h4><p>No tiene Saldo Disponible</p></li>";
+                    }} break;}?>
+                </ul>
+                
+            </div>
+
+            <!-- Page content -->
+            <div id="page-content-wrapper">
+                <!-- Keep all page content within the page-content inset div! -->
+                <div class="page-content inset">
+                    <?php echo $this->getMesseger(); ?>
+                    <?php echo $this->layout()->content; ?>
+                </div>
+            </div>
+
+        </div>
+        <?php echo $this->render('render/script-footer_intranet.phtml'); ?>
+        <?php echo $this->headScript(); ?>
+    </body>
+</html>

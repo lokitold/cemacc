@@ -1,0 +1,43 @@
+<h3>Pagos</h3>
+<div class="col-sm-9">
+    <br/>
+    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+        <table id="tablePublicacion" class="table table-striped table-bordered bootstrap-datatable datatable dataTable" aria-describedby="DataTables_Table_0_info">
+            <thead>
+            <th>Empresa</th>
+            <th>Paquete</th>
+            <th>Monto</th>
+            <th>Fecha Compra</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($this->pagos as $pago) {
+                    $fechaCompra = new Zend_Date($pago['fecha_compra']);
+                    ?>
+                    <tr>
+                        <td><?php echo $pago['empresa_nombre_comercial']; ?></td>
+                        <td><?php echo $pago['paquete_nombre']; ?></td>
+                        <td>S/. <?php echo $pago['paquete_precio']; ?></td>
+                        <td><?php echo $fechaCompra->get('dd-MM-YYYY'); ?></td>
+                        <td><?php
+                            if ($pago['swt_activo'])
+                                echo '<span class="label label-success">Confirmado</span>';
+                            else
+                                echo '<span class="label label-warning">Pendiente</span>';
+                            ?>
+                        </td>
+                        <td>
+                            <?php if ($pago['swt_activo']) { ?>
+                                <a class="btn btn-danger btn-sm" href="<?php echo BASE_URL; ?>/administracion/pagos/eliminar/id/<?php echo $pago['compra_saldo_id']; ?>"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+                            <?php } else { ?>
+                                <a class="btn btn-success btn-sm" href="<?php echo BASE_URL; ?>/administracion/pagos/confirmar/id/<?php echo $pago['compra_saldo_id']; ?>"><span class="glyphicon glyphicon-ok"></span> Confirmar</a>
+                            <?php } ?>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>

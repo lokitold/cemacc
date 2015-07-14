@@ -1,0 +1,64 @@
+<h3>Listado de Paquetes</h3>
+<div class="box-content col-sm-10">
+    <div>
+            <a class="btn btn-sm btn-primary" href="<?php echo BASE_URL; ?>/administracion/paquete/nuevo"><span class="glyphicon glyphicon-plus-sign"></span> Nuevo Paquete
+            </a>
+    </div>
+    <br/>
+    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+        <table id="tablePaquete" class="table table-striped table-bordered bootstrap-datatable datatable dataTable table-hover" aria-describedby="DataTables_Table_0_info">
+            <thead>
+            <th>Nombre</th>
+            <th>Tiempo</th>
+            <th>Dimensiones</th>
+            <th>Precio</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($this->paquete as $paquete) {
+                    ?>
+                    <tr>
+                        <td><?php echo $paquete['paquete_nombre']; ?></td>
+                        <td><?php echo $paquete['paquete_dias']; ?> días</td>
+                        <td><?php echo $paquete['paquete_dimension']; ?></td>
+                        <td><?php echo $paquete['paquete_precio']; ?></td>
+                        <td><?php
+                            if ($paquete['swt_activo'])
+                                echo '<span class="label label-success">Activo</span>';
+                            else
+                                echo '<span class="label label-warning">Inactivo</span>';
+                            ?>
+                        </td>
+                        <td>
+                                <a class="btn btn-info btn-sm" href="<?php echo BASE_URL; ?>/administracion/paquete/editar/id/<?php echo $paquete['paquete_id']; ?>"><span class="glyphicon glyphicon-edit"></span> Editar</a>
+                                <?php if ($paquete['swt_activo']) { ?>
+                                    <a class="btn btn-danger btn-sm" href="<?php echo BASE_URL; ?>/administracion/paquete/activar/id/<?php echo $paquete['paquete_id']; ?>/flag/0"><span class="glyphicon glyphicon-ban-circle"></span> Desactivar</a>
+                                <?php } else { ?>
+                                    <a class="btn btn-warning btn-sm" href="<?php echo BASE_URL; ?>/administracion/paquete/activar/id/<?php echo $paquete['paquete_id']; ?>/flag/1"><span class="glyphicon glyphicon-ok"></span> Activar</a>
+                                <?php } ?>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="verUsuarioModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Ver Usuario</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

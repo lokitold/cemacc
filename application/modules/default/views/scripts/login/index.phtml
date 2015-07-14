@@ -1,0 +1,8 @@
+<form class="form-signin" role="form" method="post" action="">
+    <h2 class="form-signin-heading">Sistema CEMACC</h2>
+    <?php echo $this->getMesseger(); ?>
+    <input type="text" class="form-control" placeholder="Usuario" required="" autofocus="" name="username" id="username">
+    <input type="password" class="form-control" placeholder="Contraseña" required="" name="password" id="password">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+    <a href="/recuperar-password">¿Olvidaste tu contraseña?</a>
+</form>

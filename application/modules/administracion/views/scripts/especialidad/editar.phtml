@@ -1,0 +1,40 @@
+<div class="box-content" style="display: block;">
+    <h2>Editar Especialidad</h2>
+    <hr>
+    <div class="col-lg-6">
+        <form action="/administracion/especialidad/editar/id/<?php echo $this->form->getElement('especialidad')->getValue(); ?>" method="POST">
+            <div class="row">
+                 <?php echo $this->form->getElement('especialidad'); ?>
+                <div class="input-group">
+                    <span class="input-group-addon">Nombre: &nbsp;&nbsp;</span>
+                    <?php echo $this->form->getElement('nombre'); ?>
+                </div>
+            </div>
+            <br>
+            
+            
+            <div class="row">
+               
+                <div class="input-group">
+                    <span class="input-group-addon">Distrito: &nbsp;&nbsp;</span>
+                    <?php echo $this->form->getElement('distrito'); ?>
+                </div>
+            </div>
+            
+            <br>
+               <div class="row">
+               
+                <div class="input-group">
+                    <span class="input-group-addon">Organo: &nbsp;&nbsp;</span>
+                    <?php echo $this->form->getElement('organo'); ?>
+                </div>
+            </div>
+          
+            <br>
+            <div class="row">
+                <button type="submit" class="btn btn-primary">Registrar</button>
+                <a class="btn btn-default" href="/administracion/especialidad" >Cancelar</a>
+            </div>    
+        </form>
+    </div>
+</div>

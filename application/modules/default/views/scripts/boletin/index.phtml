@@ -1,0 +1,65 @@
+<div style="margin-top: 20px;font-size: 13px" class="container">
+    <div class="col-md-12">
+        <div class="col-md-7">
+            <p>El Boletín Empresarial  de CEMACC es un instrumento de difusión informativa con una edición electrónica de 
+                carácter semanal. Su objetivo es la difusión de temas relacionados a la Gestión Empresarial, dando a conocer 
+                noticias relevantes, de investigación, eventos, entre otros.<br/>
+                El boletín dispone de diversas secciones, entre las que se encuentran  artículos referentes a la Gestión Financiera Contable, 
+                Talento Humano y Producción.<br/> 
+                Se accede previa identificación, con el login y el password del correo electrónico.</p> 
+
+            <h2>Boletines Mensuales</h2>
+            <h3>2014</h3>
+            <div class="row">
+
+                <?php
+                foreach ($this->boletin as $boletin) {
+
+                    $fecha = new Zend_Date($boletin['boletin_fecha'], 'YYYY-MM-dd');
+
+                    switch ($fecha->get('MM')) {
+                        case 1: $mes = "ENERO";
+                            break;
+                        case 2: $mes = "FEBRERO";
+                            break;
+                        case 3: $mes = "MARZO";
+                            break;
+                        case 4: $mes = "ABRIL";
+                            break;
+                        case 5: $mes = "MAYO";
+                            break;
+                        case 6: $mes = "JUNIO";
+                            break;
+                        case 7: $mes = "JULIO";
+                            break;
+                        case 8: $mes = "AGOSTO";
+                            break;
+                        case 9: $mes = "SETIEMBRE";
+                            break;
+                        case 10: $mes = "OCTUBRE";
+                            break;
+                        case 11: $mes = "NOVIEMBRE";
+                            break;
+                        case 12: $mes = "DICIEMBRE";
+                            break;
+                    }
+                    ?>
+                    <div class="col-sm-6 col-md-3 publicidadMain">
+                        <a href="<?php echo DINAMIC_URL . '/boletin/' . $boletin['boletin_url']; ?>" target="_blank">
+                            <div class="thumbnail thumbMain">
+                                <img src="<?php echo DINAMIC_URL . '/boletin/'. $boletin['boletin_portada']; ?>" alt="...">
+                            </div>
+                        </a> 
+                        <h4 style="text-align: center"><?php echo $mes; ?></h4>
+                    </div>
+<?php } ?>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-5 publicidadMain thumbnail thumbMain">
+            <img style="padding-top: 20px; padding-bottom: 20px;" src="<?php echo STATIC_URL . '/img/imagen-nosotros1.jpg'; ?>" alt="...">
+        </div>
+    </div>
+</div>    

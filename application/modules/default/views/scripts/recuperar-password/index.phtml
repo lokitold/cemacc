@@ -1,0 +1,12 @@
+<div class="col-md-3">
+<h3>Recuperar Contraseña</h3>
+<?php echo $this->getMesseger(); ?>
+<p>Se le enviará sus credenciales al correo electrónico indicado</p>
+<form method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Correo Eletrónico</label>
+        <?php echo $this->form->getElement('email') ?>
+    </div>
+     <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+</div>

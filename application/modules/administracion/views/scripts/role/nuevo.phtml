@@ -1,0 +1,76 @@
+<?php
+$modules = array();
+foreach ($this->tree as $key => $index) {
+    switch ($index['module']) {
+        case 'administracion':
+            $modules['Administrador'][] = $this->tree[$key];
+            break;
+        case 'concesionario':
+            $modules['Dealer'][] = $this->tree[$key];
+            break;
+        case 'proveedor':
+            $modules['Proveedor'][] = $this->tree[$key];
+            break;
+    }
+}
+?>
+<form class="form-horizontal" method="post" action="/administracion/role/nuevo">
+    <fieldset>
+        <div class="control-group span7" style="margin-left: 24px;">
+            <label for="focusedInput" class="control-label">Nombre: </label>
+            <div class="controls">
+                <?php echo $this->form->getElement('nombre'); ?>
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <div class="control-group span6" style="margin-left: 24px;">
+            <label for="focusedInput" class="control-label">Accesos: </label>
+
+            <div class="controls" style="height: 250px; width: 400px; overflow-y: scroll">
+                <ul id="treeView" >
+                    <?php foreach ($modules as $index0 => $key) { ?>
+                        <li>
+                            <span class="icon icon-darkgray icon-triangle-e"></span>
+                            <a><?php echo $index0; ?></a>
+                            <ul>
+                                <?php foreach ($key as $index) { ?>
+                                    <li>
+                                        <span class="icon icon-darkgray icon-triangle-e"></span>
+                                        <a><?php echo $index['label']; ?></a>
+                                        <ul>
+                                            <?php foreach ($index['pages'] as $index2) { ?>
+                                            <li> <input <?php echo (in_array($index2['id'],$this->resourceSelected))?'checked="checked"':'';  ?>  type="checkbox" value="<?php echo $index2['id'] ?>"  name="resource[]"> <?php echo $index2['label']; ?>  </li>
+                                            <?php } ?>
+                                        </ul>
+                                    </li>
+                                <?php } ?>
+                            </ul>
+                        </li>
+
+                    <?php } ?>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="control-group span6" style="margin-left: 24px;">
+            <div class="controls">
+
+                <?php echo $this->form->getElement('resourceHiden'); ?>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="control-group span7" style="margin-left: 24px;">
+            <label for="descripcion" class="control-label">Descripcion: </label>
+            <div class="controls">
+                <?php echo $this->form->getElement('descripcion'); ?>
+                </div>
+        </div>
+        <div class="clear"></div>
+        <div class="form-actions">
+            <a class="btn" href="/administracion/role">Cancelar</a>
+            <button class="btn btn-primary" type="submit">Registrar Rol</button>
+        </div>
+    </fieldset>
+</form>

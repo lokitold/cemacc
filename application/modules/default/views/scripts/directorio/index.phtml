@@ -1,0 +1,71 @@
+<div style="margin-top: 20px;font-size: 13px" class="container">
+    <div class="col-md-8 directorio">
+        <div class="panel panel-primary">
+
+            <div class="panel-body">
+                <?php foreach ($this->categoria as $data) { ?>
+                    <div style="margin-top: 3px;margin-bottom: 3px;" class="col-md-4">
+                        <a href="<?php echo BASE_URL . '/directorio/categoria/id/' . $data['categoria_id']; ?>"> <?php echo $data['categoria_nombre']; ?> </a>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+        <p>El directorio empresarial es una herramienta donde encontrará empresas de todos los sectores clasificadas 
+            adecuadamente; ser parte de esta gran red social empresarial tiene sus beneficios:<br/>
+        <ul>
+            <li>Podrá publicar las veces que estipule el tipo de contrato.</li>
+            <li>Enviar solicitudes de compra y de servicio sin ningún costo adicional, así como la recepción de solicitudes de 
+                otros usuarios.</li>
+            <li>Tiene un descuento corporativo a los espacios publicitarios.</li>
+            <li>Puede acceder a precios más bajos para asistir a los diversos cursos, talleres y calificaciones que se programen 
+                dentro del Centro de Formación Empresarial.</li>
+        </ul>
+        <p>Si cumple con los requisitos, puede inscribir su empresa <a href="<?php echo BASE_URL . '/registro'; ?>">AQUI</a>
+            Para mayor información, puede comunicarse a los teléfonos o al correo ventas@cem-acc.com</p>
+
+    </div>
+    <div style="padding: 0"class="col-md-4">
+        <div>
+            <img src="<?php echo STATIC_URL . '/img/registre-ya.png'; ?>" alt="...">    
+        </div>
+        <br/>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Últimas Empresas Registradas</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="media-list">
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="<?php echo DINAMIC_URL . '/empresa/mini-adra.jpg'; ?>" alt="...">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">WONG & CIA LOGISTICA S.A.C.</h4>
+                            Av. El Derby 055 Torre 1 piso 7 - Santiago de Surco
+                        </div>
+                    </li>
+                    <hr/>
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="<?php echo DINAMIC_URL . '/empresa/mini-bimbo.jpg'; ?>" alt="...">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">RICAVA SAC</h4>
+                            Av. Petit Thouars # 5390 Miraflores
+                        </div>
+                    </li>
+                    <hr/>
+                    <li class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="<?php echo DINAMIC_URL . '/empresa/mini-casa.jpg'; ?>" alt="...">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">Servicios Logísticos Diésel S.A.C.</h4>
+                            Calle 32 Nº 332 Urb. Corpac - San Isidro
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>    

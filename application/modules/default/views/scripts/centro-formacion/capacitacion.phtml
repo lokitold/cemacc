@@ -1,0 +1,86 @@
+<div style="margin-top: 20px;font-size: 13px" class="container">
+    <?php $data = $this->capacitacion; ?>
+    <div class="col-md-8">
+        <div>
+            <div class="tarjetaCapacitacion">
+                <div class="tarjetaContent">
+                    <?php $fecha = new Zend_Date($data['capacitacion_fecha']) ?>
+                    <p><?php echo $fecha->get('dd-MM-YYYY') ?></p>
+                    <h1><?php echo $data['capacitacion_titulo']; ?></h1>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="margin-top-20">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#tabPresentacion" role="tab" data-toggle="tab">PRESENTACIÓN</a></li>
+                <li><a href="#tabBeneficios" role="tab" data-toggle="tab">BENEFICIOS</a></li>
+                <li><a href="#tabContenido" role="tab" data-toggle="tab">CONTENIDO</a></li>
+                <li><a href="#tabTrainer" role="tab" data-toggle="tab">TRAINER</a></li>
+                <li><a href="#tabInfo" role="tab" data-toggle="tab">INFORMACIÓN GENERAL</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="tabPresentacion">
+                    <?php echo $data['capacitacion_presentacion'] ?>
+                </div>
+                <div class="tab-pane fade " id="tabBeneficios">
+                    <?php echo $data['capacitacion_beneficios'] ?>
+                </div>
+                <div class="tab-pane fade " id="tabContenido">
+                    <?php echo $data['capacitacion_contenido'] ?>
+                </div>
+                <div class="tab-pane fade " id="tabTrainer">
+                    <div class="row">
+                        <div class="col-sm-3"><img src="<?php echo DINAMIC_URL . '/trainer/' . $data['trainer_foto']; ?>" alt="<?php echo $data['trainer_nombres'] . ' ' . $data['trainer_apellidos']; ?>" title="<?php echo $data['trainer_nombres'] . ' ' . $data['trainer_apellidos']; ?>"/></div>
+                        <div class="col-sm-9">
+                            <h3><?php echo $data['trainer_nombres'] . ' ' . $data['trainer_apellidos']; ?></h3>
+                            <?php echo $data['trainer_descripcion'] ?>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade " id="tabInfo">
+                    <?php echo $data['capacitacion_info_general'] ?>
+                </div>
+            </div>        
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="capacitacionAsistir">
+            <div class="asistirContent">
+                <p>¿Quiénes deben asistir?</p>
+                <p><?php echo $data['capacitacion_asiste']; ?></p>
+            </div>
+
+        </div>
+    </div>    
+    <div style="padding: 0; margin-left: 40px;" class="col-md-3">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Eventos</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="media-list">
+                    <?php
+                    foreach ($this->evento as $evento) {
+                        $fecha = new Zend_Date($evento['capacitacion_fecha'], 'YYYY-MM-dd');
+                        ?>
+                        <li class="media" style="margin-top: 3px">
+                            <div class="pull-left" style="background-color: #00569e; color: #fff; padding: 25px 8px 25px 8px;">
+                                <?php echo $fecha->get('dd-MM-YYYY') ?>
+                            </div>
+                            <div class="media-body" style="padding-top: 15px">
+                                <a style="color:#00569e; text-decoration: none" href="<?php echo BASE_URL . '/centro-formacion/capacitacion/taller/' . $evento['capacitacion_id']; ?>"><?php echo $evento['capacitacion_titulo'] ?></a>
+                            </div>
+                        </li>
+                    <?php } ?>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+          <!-- Modal -->
+<div  class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">&nbsp;</h4>
+      </div>
+      <div class="modal-body">
+        <form name="frmRegistro" id="frmRegistro" class="form-signin" action="/login" method="post">
+        <h2 class="form-signin-heading">Ingresa a tu cuenta</h2>
+        <h6>¿Aún no tienes una cuenta empresarial? <span class="text-primary"><a href="<?php echo BASE_URL; ?>/registro">Regístrate</a></span></h6>
+        <br/>
+        <input type="text" name="username" id="username" class="form-control" placeholder="Correo" required>
+        <input name="password" id="password" type="password" class="form-control" placeholder="Contraseña" required>
+        <button class="btn btn-primary" type="submit">Ingresar</button>
+        <span class="text-primary pull-right"><small>¿Olvidaste tu contraseña?</small></span>
+      </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

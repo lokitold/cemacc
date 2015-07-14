@@ -1,0 +1,106 @@
+[production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+includePaths.library = APPLICATION_PATH "/../library"
+bootstrap.path = APPLICATION_PATH "/Bootstrap.php"
+bootstrap.class = "Bootstrap"
+appnamespace = "Application"
+
+resources.frontController.controllerDirectory = APPLICATION_PATH "/controllers"
+resources.frontController.params.displayExceptions = 0
+resources.frontController.moduleDirectory = APPLICATION_PATH "/modules"
+resources.frontController.defaultModule = "default"
+resources.frontController.prefixDefaultModule = true
+resources.frontController.params.prefixDefaultModule = "1"
+resources.frontController.defaultControllerName = "index"
+resources.frontController.defaultAction = "index"
+
+autoloaderNamespaces[] = "Core"
+
+resources.layout.layoutPath = APPLICATION_PATH "/layouts/scripts"
+resources.layout.layout = "layout"
+
+resources.view.charset = "UTF-8"
+resources.view.title = 'ske.pe'
+resources.view.encoding = "UTF-8"
+resources.view.doctype = "HTML5" ;doesn't work
+resources.view.contentType = "text/html; charset=UTF-8"
+resources.view.helperPath.Core_View_Helper = APPLICATION_PATH "/../library/Core/View/Helper"
+
+resources.cachemanager.file.frontend.name = Core
+resources.cachemanager.file.frontend.customFrontendNaming = false
+resources.cachemanager.file.frontend.options.lifetime = 7200
+resources.cachemanager.file.frontend.options.automatic_serialization = true
+resources.cachemanager.file.backend.name = File
+resources.cachemanager.file.backend.customBackendNaming = false
+resources.cachemanager.file.backend.options.cache_dir = APPLICATION_PATH "/../var/cache"
+resources.cachemanager.file.frontendBackendAutoload = false
+
+email.server = "smtpout.secureserver.net"
+email.port = "80"
+email.username = "fabrica@bitminds-consultors.com"
+email.password = "$$Fabrica2020"
+email.front = "fabrica@bitminds-consultors.com"
+;;email.protocol = "tls"
+
+app.siteUrl = http://local.websolpdi.com
+app.staticUrl = http://local.websolpdi.com/static
+app.dinamicUrl = http://local.websolpdi.com/dinamic
+app.serviceUrl = http://dev.websolpdiserv.com/
+
+app.reportServerUrl = 192.168.1.37
+app.reportServerPort = 8080
+app.reportServerUser = jasperadmin
+app.reportServerPassword = jasperadmin
+app.reportServerLocation = /jasperserver
+
+
+
+[staging : production]
+
+[testing : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+
+[pre : production]
+phpSettings.display_startup_errors = 0
+phpSettings.display_errors = 0
+resources.frontController.params.displayExceptions = 1
+
+
+app.siteUrl = http://admin.websolpdi.com/
+app.staticUrl = http://admin.websolpdi.com/static
+app.dinamicUrl = http://admin.websolpdi.com/dinamic
+app.serviceUrl = http://admin.websolpdiserv.com/
+
+[sqa : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+resources.frontController.params.displayExceptions = 1
+
+
+app.siteUrl = http://sqa.webpdi.com/
+app.staticUrl = http://sqa.webpdi.com/static
+app.dinamicUrl = http://sqa.webpdi.com/dinamic
+app.serviceUrl = http://sqa.webpdiserv.com/
+
+[development : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+resources.frontController.params.displayExceptions = 1
+
+
+app.siteUrl = http://dev.webpdi.com/
+app.staticUrl = http://dev.webpdi.com/static
+app.dinamicUrl = http://dev.webpdi.com/dinamic
+app.serviceUrl = http://dev.webpdiserv.com/
+
+
+[local : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+resources.frontController.params.displayExceptions = 1
+app.siteUrl = http://local.webpdi.com/
+app.staticUrl = http://local.webpdi.com/static
+app.dinamicUrl = http://local.webpdi.com/dinamic
+app.serviceUrl = http://local.webpdiserv.com/

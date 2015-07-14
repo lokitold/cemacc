@@ -1,0 +1,26 @@
+<div class="box-content" style="display: block;">
+    <h2>Agregar Nuevo Distrito Judicial</h2>
+    <hr>
+    <div class="col-lg-6">
+        <form action="" method="POST">
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">Nombre: &nbsp;&nbsp;</span>
+                    <?php echo $this->form->getElement('nombre'); ?>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="input-group">
+                    <span class="input-group-addon">Estado <?php echo $this->form->getElement('estado'); ?> :</span>
+                    <input type="text" class="form-control" readonly="readonly">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <input type="submit" class="btn btn-danger">
+                <a class="btn btn-info" href="/administracion/distrito-judicial" >Cancelar</a>
+            </div>    
+        </form>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<h3>Boletines</h3>
+<div class="col-sm-9">
+    <div>
+        <a class="btn btn-sm btn-primary" href="<?php echo BASE_URL ?>/administracion/boletin/nuevo"><span class="glyphicon glyphicon-plus-sign"></span> Nuevo Boletin
+        </a>
+    </div>
+    <br/>
+    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper" role="grid">
+        <table id="tableBoletin" class="table table-striped table-bordered bootstrap-datatable datatable dataTable" aria-describedby="DataTables_Table_0_info">
+            <thead>
+            <th>Año</th>
+            <th>Mes</th>
+            <th>Archivo</th>
+           <!-- <th>Acciones</th> -->
+            </thead>
+            <tbody>
+                <?php
+                foreach ($this->boletin as $boletin) {
+                    $fecha = new Zend_Date($boletin['boletin_fecha'], 'YYYY-MM-dd');
+                    ?>
+                    <tr>
+                        <td><?php echo $fecha->get('YYYY'); ?></td>
+                        <td><?php echo $fecha->get('MM'); ?></td>
+                      <!--  <td><i style="font-size: 24px;" class="icon-download-alt"></i></td> -->
+                        <td>
+                           <!-- <a class="btn btn-info btn-sm" href="<?php //echo BASE_URL; ?>/administracion/boletin/editar/id/<?php //echo $boletin['boletin_id']; ?>"><span class="glyphicon glyphicon-edit"></span> Editar</a> -->
+                            <a class="btn btn-success btn-sm" href="<?php echo BASE_URL; ?>/dinamic/boletin/<?php echo $boletin['boletin_url']; ?>" target="_blank"><span class="glyphicon glyphicon-eye-open"></span> Ver</a>
+                            <a class="btn btn-danger btn-sm" href="<?php echo BASE_URL; ?>/administracion/boletin/eliminar/id/<?php echo $boletin['boletin_id']; ?>"><span class="glyphicon glyphicon-trash"></span> Eliminar</a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>

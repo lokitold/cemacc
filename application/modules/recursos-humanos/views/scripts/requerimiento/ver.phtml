@@ -1,0 +1,18 @@
+<div class="box-content" style="display: block;">
+        <fieldset>
+            <p><b>Tipo Documento:</b> 
+            <?php 
+            if($this->usuario['implicado_tipo_documento'] == 1){
+                echo "DNI";
+            }else
+                echo "CE";
+            ?>
+            </p>
+            <p><b>Número Documento:</b> <?php echo $this->usuario['implicado_numero_documento']; ?></p>
+            <p><b>Nombres:</b> <?php echo $this->usuario['implicado_nombre']; ?></p>
+            <p><b>Apellidos:</b> <?php echo $this->usuario['implicado_apellido_paterno'].' '.$this->usuario['implicado_apellido_materno']; ?></p>
+            <p><b>Email:</b> <?php echo $this->usuario['implicado_email']; ?></p>
+            <p><b>Usuario:</b> <?php echo $this->usuario['usuario_identity']; ?></p>
+            <p><b>Rol:</b> <?php echo $this->usuario['role_nombre']; ?></p>
+        </fieldset>
+</div>
