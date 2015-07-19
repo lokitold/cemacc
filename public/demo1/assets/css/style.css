@@ -1,0 +1,11 @@
+.block-news {padding:27px 33px 30px;border:1px solid #eaeaea;background:url(../images/block-news-tail.gif) 0 0 repeat-x #f9f9f9;border-radius:18px;-moz-border-radius:18px;-webkit-border-radius:18px}
+.wrapper {width:100%;overflow:hidden}
+.tdate-1 {font-size:20px;line-height:1.2em;color:#0f0f0f;text-align:center;letter-spacing:-2px;margin:-8px 16px 0 0}
+.tdate-1 strong {display:block;font-size:49px;line-height:1.2em;color:#0EA3A2;margin-bottom:-10px}
+.tdate-2 {float:left;color:#0f0f0f}
+.fleft {float:left}
+.extra-wrap {overflow:hidden}
+h5 {color:#0f0f0f;text-decoration:underline;font-weight:normal}
+h3 strong {display:block;color:#fefefe;margin-bottom:-11px}
+
+
